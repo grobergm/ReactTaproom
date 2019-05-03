@@ -16,7 +16,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={Landing} />
           <Route path='/admin' component={Admin} />
-          <Route path='/keglist' component={Public} />
+          <Route path='/public' component={Public} />
           <Route component={NotFound} />
         </Switch>
       </div>

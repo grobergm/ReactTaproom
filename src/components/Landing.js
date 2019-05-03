@@ -32,7 +32,7 @@ function Landing(){
 			<div style={darkScreen}>
 				<div style={title}>
 					<h1 style={{marginBottom:'3vw'}}>React Taproom</h1>
-					<Link to='/keglist'><div className='blue-btn'>See what's on tap</div></Link>
+					<Link to='/public'><div className='blue-btn'>See what's on tap</div></Link>
 				</div>
 			</div>
 		</div>

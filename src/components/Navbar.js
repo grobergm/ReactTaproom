@@ -18,7 +18,7 @@ function Navbar(){
 	return(
 		<div style={layout}>
 				<Link to='/'><p style={navItems}>Home</p></Link>
-				<Link to='/keglist'><p style={navItems}>Tap List</p></Link>
+				<Link to='/public'><p style={navItems}>Public</p></Link>
 				<Link to='/admin'><p style={navItems}>Admin</p></Link>
 		</div>
 		)
