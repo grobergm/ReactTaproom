@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Landing(){
 	const layout={
 		width:'100%',
-		height:'100vh',
+		height:'90vh',
 		backgroundImage:`url(${beer})`,
 		backgroundSize:'cover',
 		backgroundPosition:'left',
@@ -15,9 +15,9 @@ function Landing(){
 	const darkScreen={
 		positon:'absolute',
 		width:'100%',
-		height:'100vh',
-		backgroundColor:'rgba(0,0,0,0.2)',
-		backgroundImage:'linear-gradient(0deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.5) 100%),radial-gradient(50% 120%,rgba(0,0,0,0) 50%,rgba(0,0,0,.7) 100%)',
+		height:'90vh',
+		backgroundColor:'rgba(0,0,0,0.1)',
+		backgroundImage:'linear-gradient(0deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.3) 100%),radial-gradient(50% 120%,rgba(0,0,0,0) 50%,rgba(0,0,0,.5) 100%)',
 		display:'flex',
 		justifyContent:'center',
 		alignItems:'center'
