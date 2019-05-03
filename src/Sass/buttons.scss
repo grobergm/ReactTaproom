@@ -1,0 +1,15 @@
+.delete{
+	@include buttonStyle ($red);
+}
+
+.edit{
+	@include buttonStyle ($orange);
+}
+
+.sell{
+	@include buttonStyle ($green);
+}
+
+.focus{
+	@include buttonStyle ($blue);
+}

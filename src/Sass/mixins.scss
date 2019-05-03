@@ -1,0 +1,10 @@
+@mixin buttonStyle ($color){
+	background-color:$color;
+	padding:1vw;
+	border-radius:3px;
+	cursor:pointer;
+	font-weight:bold;
+	&:hover{
+		background-color:lighten($color,10%);
+	}
+}
