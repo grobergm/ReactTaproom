@@ -8,17 +8,18 @@ function Navbar(){
 		height:'10vh',
 		justifyContent:'space-around',
 		alignItems:'center',
-		backgroundColor:'rgba(140,13,13)',
+		backgroundColor:'black',
 		fontWeight:'bold'
 	}
 
+	const navItems={
+		color:'rgb(242,238,174)'
+	}
 	return(
 		<div style={layout}>
-				<Link to='/'>
-					<img style={{height:'40px'}} src={logo}/>	
-				</Link>
-				<Link to='/keglist'><p>Tap List</p></Link>
-				<Link to='/admin'><p>Admin</p></Link>
+				<Link to='/'><p style={navItems}>Home</p></Link>
+				<Link to='/keglist'><p style={navItems}>Tap List</p></Link>
+				<Link to='/admin'><p style={navItems}>Admin</p></Link>
 		</div>
 		)
 }

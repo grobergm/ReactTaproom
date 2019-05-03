@@ -28,7 +28,7 @@ function Landing(){
 	}
 
 	const CTA={
-		backgroundColor:'rgba(242,168,29)',
+		backgroundColor:'rgb(121,199,217)',
 		color:'white',
 		padding:'3vw',
 		borderRadius:'3px',
@@ -40,7 +40,7 @@ function Landing(){
 			<div style={darkScreen}>
 				<div style={title}>
 					<h1 style={{marginBottom:'3vw'}}>React Taproom</h1>
-					<Link to='/keglist'><a style={CTA}>See what's on Tap</a></Link>
+					<Link to='/keglist'><a style={CTA}>See what's on tap</a></Link>
 				</div>
 			</div>
 		</div>
