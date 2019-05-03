@@ -1,10 +1,11 @@
 import React from 'react';
 
-function AddKeg(){
+function Navbar(){
 	return(
 		<div>
+		Navbar
 		</div>
 		)
 }
 
-export default AddKeg;
+export default Navbar;

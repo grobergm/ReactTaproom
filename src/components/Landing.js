@@ -1,10 +1,11 @@
 import React from 'react';
 
-function AddKeg(){
+function Landing(){
 	return(
 		<div>
+		Landing
 		</div>
 		)
 }
 
-export default AddKeg;
+export default Landing;

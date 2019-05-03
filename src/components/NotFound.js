@@ -1,10 +1,11 @@
 import React from 'react';
 
-function AddKeg(){
+function NotFound(){
 	return(
 		<div>
+		404 Not Found
 		</div>
 		)
 }
 
-export default AddKeg;
+export default NotFound;

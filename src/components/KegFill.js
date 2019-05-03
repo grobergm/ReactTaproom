@@ -1,10 +1,10 @@
 import React from 'react';
 
-function AddKeg(){
+function KegFill(){
 	return(
 		<div>
 		</div>
 		)
 }
 
-export default AddKeg;
+export default KegFill;
