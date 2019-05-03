@@ -6,7 +6,9 @@ function AddKeg(){
 		padding:'2vw',
 		width:'20vw',
 		margin:'0 auto',
-		cursor:'pointer'
+		cursor:'pointer',
+		fontWeight:'bold',
+		borderRadius:'3px'
 	}
 	return(
 		<div style={styles}>
