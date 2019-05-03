@@ -1,6 +1,7 @@
 import React from 'react';
 import EditKeg from './EditKeg';
 import DeleteKeg from './DeleteKeg';
+import KegFill from './KegFill';
 
 
 function Keg(props){
@@ -13,10 +14,6 @@ function Keg(props){
 
 	return(
 		<div style={kegStyle}>
-			<h2>{props.name}</h2>
-			<p>{props.brewery}</p>
-			<p>{props.type}</p>
-			<p>${props.price} ABV:{props.abv}</p>
 			{
 				props.admin ? 
 				<div style={{display:'flex'}}>
@@ -25,6 +22,11 @@ function Keg(props){
 				</div> 
 				: null
 			}
+			<h2>{props.name}</h2>
+			<p>{props.brewery}</p>
+			<p>{props.type}</p>
+			<p>${props.price} ABV:{props.abv}</p>
+			<KegFill pints={props.pints} />
 		</div>
 		)
 }

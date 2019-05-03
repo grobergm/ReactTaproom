@@ -29,7 +29,7 @@ function Landing(){
 
 	const CTA={
 		backgroundColor:'rgb(121,199,217)',
-		color:'white',
+		color:'rgb(242,238,174)',
 		padding:'3vw',
 		borderRadius:'3px',
 		fontWeight:'bold'

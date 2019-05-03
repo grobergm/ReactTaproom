@@ -6,7 +6,7 @@ const kegArray=[
 		type:'IPA',
 		abv:'5.5%',
 		price:4.5,
-		pints:124
+		pints:0
 	},
 	{
 		id:1,
@@ -15,7 +15,7 @@ const kegArray=[
 		type:'Dark Ale',
 		abv:'7.5%',
 		price:5.5,
-		pints:124
+		pints:0
 	},
 	{
 		id:2,
@@ -24,7 +24,7 @@ const kegArray=[
 		type:'IPA',
 		abv:'6.5%',
 		price:4.5,
-		pints:124
+		pints:0
 	},
 	{
 		id:3,
@@ -33,7 +33,7 @@ const kegArray=[
 		type:'Kombucha',
 		abv:'0.5%',
 		price:4.0,
-		pints:124
+		pints:0
 	},
 	{
 		id:4,
@@ -42,7 +42,7 @@ const kegArray=[
 		type:'IPA',
 		abv:'5.5%',
 		price:4.5,
-		pints:124
+		pints:0
 	},
 	{
 		id:5,
@@ -51,7 +51,7 @@ const kegArray=[
 		type:'Dark Ale',
 		abv:'7.5%',
 		price:5.5,
-		pints:124
+		pints:0
 	},
 	{
 		id:6,
@@ -60,7 +60,7 @@ const kegArray=[
 		type:'IPA',
 		abv:'6.5%',
 		price:4.5,
-		pints:124
+		pints:0
 	},
 	{
 		id:7,
@@ -69,7 +69,7 @@ const kegArray=[
 		type:'Kombucha',
 		abv:'5.5%',
 		price:4.0,
-		pints:124
+		pints:0
 	}
 	]
 
