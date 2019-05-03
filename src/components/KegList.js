@@ -14,7 +14,7 @@ function KegList(props){
 	}
 
 	return(
-		<div style={grid}>
+		<div style={grid}>	
 			{
 				kegArray.map((keg,index)=>{
 					return <Keg 

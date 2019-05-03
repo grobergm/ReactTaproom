@@ -4,7 +4,8 @@ function KegFill(props){
 	const keg={
 		border:'1px solid black',
 		height:'5vh',
-		overflow:'hidden'
+		overflow:'hidden',
+		borderRadius:'3px'
 	}
 	const fill={
 		backgroundColor:'rgb(242,238,174)',

@@ -16,7 +16,7 @@ function Keg(props){
 		<div style={kegStyle}>
 			{
 				props.admin ? 
-				<div style={{display:'flex'}}>
+				<div style={{display:'flex', justifyContent:'space-around'}}>
 					<EditKeg id={props.id} />
 					<DeleteKeg id={props.id} />
 				</div> 
