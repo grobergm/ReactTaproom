@@ -1,0 +1,18 @@
+@import './Sass/reset.scss';
+@import './Sass/variables.scss';
+@import './Sass/mixins.scss';
+@import './Sass/typefaces.scss';
+
+body{
+  color:white;
+  text-align:center;
+}
+
+
+
+@mixin buttonStyle ($color){
+	background-color:$color;
+	padding:1vw;
+	border-radius:3px;
+	cursor:pointer;
+}
