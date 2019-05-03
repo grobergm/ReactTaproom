@@ -1,25 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+
+import Landing from './components/Landing';
+import Navbar from './components/Navbar';
+import Admin from './components/Admin';
+import KegList from './components/KegList';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <Router>
+      <div>
+        <Navbar />
+        <Switch>
+          <Route exact path='/' component={Landing} />
+          <Route path='/admin' component={Admin} />
+          <Route path='/keglist' component={KegList} />
+          <Route component={NotFound} />
+        </Switch>
+      </div>
+     </Router>
   );
 }
 
