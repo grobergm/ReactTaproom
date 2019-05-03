@@ -13,6 +13,7 @@ function Keg(props){
 			<h2>{props.name}</h2>
 			<p>{props.brewery}</p>
 			<p>{props.type}</p>
+			<p>${props.price} ABV:{props.abv}</p>
 		</div>
 		)
 }

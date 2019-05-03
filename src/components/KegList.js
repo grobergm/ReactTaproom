@@ -9,7 +9,8 @@ function KegList(){
 		gridTemplateColumns:'repeat(4,20%)',
 		justifyContent:'center',
 		gridGap:'1vw',
-		paddingTop:'3vw'
+		paddingTop:'3vw',
+
 	}
 
 	return(
@@ -20,6 +21,8 @@ function KegList(){
 									name={keg.name}
 									brewery={keg.brewery}
 									type={keg.type}
+									price={keg.price}
+									abv={keg.abv}
 									key={index} />
 				})
 			}
