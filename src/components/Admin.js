@@ -8,7 +8,8 @@ function Admin(){
 	const background={
 		backgroundImage:`url(${kegroom})`,
 		backgroundSize:'cover',
-		height:'90vh'
+		height:'90vh',
+		overfloxY:'hidden'
 	}
 	return(
 		<div style={background}>

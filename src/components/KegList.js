@@ -6,11 +6,10 @@ function KegList(props){
 	
 	const grid={
 		display:'grid',
-		gridTemplateColumns:'repeat(4,20%)',
+		gridTemplateColumns:'repeat(auto-fill,minmax(150px,1fr))',
 		justifyContent:'center',
 		gridGap:'1vw',
-		paddingTop:'3vw',
-
+		paddingTop:'3vw'
 	}
 
 	return(

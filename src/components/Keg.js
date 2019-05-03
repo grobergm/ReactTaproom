@@ -10,7 +10,7 @@ function Keg(props){
 		textAlign:'center',
 		padding:'2vw',
 		backgroundColor:'rgba(0,0,0,0.7)',
-		borderRadius:'2px'
+		borderRadius:'3px'
 	}
 
 	return(
