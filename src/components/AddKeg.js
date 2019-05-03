@@ -2,16 +2,11 @@ import React from 'react';
 
 function AddKeg(){
 	const styles={
-		backgroundColor:'rgb(121,199,217)',
-		padding:'2vw',
 		width:'20vw',
-		margin:'0 auto',
-		cursor:'pointer',
-		fontWeight:'bold',
-		borderRadius:'3px'
+		margin:'0 auto'
 	}
 	return(
-		<div style={styles}>
+		<div style={styles} className='blue-btn'>
 			New Keg Form
 		</div>
 		)

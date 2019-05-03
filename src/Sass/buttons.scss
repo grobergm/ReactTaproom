@@ -1,15 +1,15 @@
-.delete{
+.red-btn{
 	@include buttonStyle ($red);
 }
 
-.edit{
+.orange-btn{
 	@include buttonStyle ($orange);
 }
 
-.sell{
+.green-btn{
 	@include buttonStyle ($green);
 }
 
-.focus{
+.blue-btn{
 	@include buttonStyle ($blue);
 }

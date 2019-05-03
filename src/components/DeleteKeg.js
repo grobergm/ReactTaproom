@@ -3,7 +3,7 @@ import React from 'react';
 function DeleteKeg(){
 
 	return(
-		<div className='delete'>
+		<div className='red-btn'>
 			Remove
 		</div>
 		)

@@ -1,14 +1,9 @@
 import React from 'react';
 
 function EditKeg(){
-	const styles={
-		backgroundColor:'rgba(242,168,29)',
-		padding:'1vw',
-		borderRadius:'3px',
-		cursor:'pointer'
-	}
+
 	return(
-		<div style={styles}>
+		<div className='orange-btn'>
 			Edit
 		</div>
 		)

@@ -27,20 +27,12 @@ function Landing(){
 		zIndex:'1',
 	}
 
-	const CTA={
-		backgroundColor:'rgb(121,199,217)',
-		color:'rgb(242,238,174)',
-		padding:'3vw',
-		borderRadius:'3px',
-		fontWeight:'bold'
-	}
-
 	return(
 		<div style={layout}>			
 			<div style={darkScreen}>
 				<div style={title}>
 					<h1 style={{marginBottom:'3vw'}}>React Taproom</h1>
-					<Link to='/keglist'><a style={CTA}>See what's on tap</a></Link>
+					<Link to='/keglist'><div className='blue-btn'>See what's on tap</div></Link>
 				</div>
 			</div>
 		</div>
