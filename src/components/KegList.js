@@ -12,10 +12,16 @@ function KegList(){
 	const grid={
 		display:'grid',
 		gridTemplateColumns:'repeat(4,20%)',
-		justifyContent:'center'
+		justifyContent:'center',
+		gridGap:'1vw',
+		paddingTop:'3vw'
+	}
+	const title={
+		textAlign:'center'
 	}
 	return(
 		<div style={background} >
+			<h1 style={title}>Current Selection</h1>
 			<div style={grid}>
 				{
 					kegArray.map((keg,index)=>{
