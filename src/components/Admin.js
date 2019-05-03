@@ -11,8 +11,8 @@ function Admin(){
 	}
 	return(
 		<div style={background}>
-			<h1>Administration</h1>
-			<KegList />
+			<h1 style={{color:'black'}}>Admin Mode</h1>
+			<KegList admin={true} />
 		</div>
 		)
 }

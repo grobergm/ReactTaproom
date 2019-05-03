@@ -1,4 +1,7 @@
 import React from 'react';
+import EditKeg from './EditKeg';
+import DeleteKeg from './DeleteKeg';
+
 
 function Keg(props){
 	const kegStyle={
@@ -14,6 +17,14 @@ function Keg(props){
 			<p>{props.brewery}</p>
 			<p>{props.type}</p>
 			<p>${props.price} ABV:{props.abv}</p>
+			{
+				props.admin ? 
+				<div style={{display:'flex'}}>
+					<EditKeg id={props.id} />
+					<DeleteKeg id={props.id} />
+				</div> 
+				: null
+			}
 		</div>
 		)
 }

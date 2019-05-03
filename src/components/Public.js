@@ -12,7 +12,7 @@ function Public(){
 	return(
 		<div style={background} >
 			<h1>Current Selection</h1>
-			<KegList />
+			<KegList admin={false} />
 		</div>
 	)
 };
