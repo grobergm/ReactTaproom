@@ -1,6 +1,8 @@
 # ReactTaproom
 _A fictional taproom, created using React. This is a remake of a project we did using the Angular framework._ 
 
+### Created by Matt Groberg
+
 ## Setup
 1. Clone this repository
 2. Make sure you have Node JS and NPM installed
