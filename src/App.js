@@ -1,5 +1,4 @@
-import React from 'react';
-import './App.scss';
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 import Landing from './components/Landing';
@@ -8,8 +7,20 @@ import Admin from './components/Admin';
 import Public from './components/Public';
 import NotFound from './components/NotFound';
 
-function App() {
-  return (
+import kegArray from './models/kegData';
+
+class App extends Component{
+  constructor(){
+    super();
+    this.state={
+      inventoryKegs:[],
+      taproomKegs:[],
+      sales:[],
+      user:''
+    }
+  }
+  render(){
+    return (
      <Router>
       <div>
         <Navbar />
@@ -22,6 +33,7 @@ function App() {
       </div>
      </Router>
   );
+  }
 }
 
 export default App;
