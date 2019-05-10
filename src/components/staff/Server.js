@@ -1,13 +1,13 @@
 import React from 'react';
 import Tab from './Tab';
-import newTabControl from './newTabControl';
+import NewTabControl from './NewTabControl';
 
 function Server(props){
 
 	return(
 		<div>
 			Server
-			<newTabControl onCheckTab={props.onCheckTab} />
+			<NewTabControl onCheckTab={props.onCheckTab} />
 			<Tab tabs={props.tabs} />
 		</div>
 		)

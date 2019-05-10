@@ -19,7 +19,7 @@ function Login(props){
 				props.user.role==='management' ? 
 					<Management /> :
 					props.user.role==='server' ?
-						<Server onCheckTab={props.onCheckTab} /> :
+						<Server onCheckTab={props.onCheckTab} tabs={props.tabs}/> :
 						<Inventory />
 			}
 			<div className='orange-btn' onClick={props.onLogout}>Logout</div>
