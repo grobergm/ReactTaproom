@@ -1,11 +1,8 @@
 import React from 'react';
 import flight from '../img/flight.jpg'
-import KegList from './KegList'
-import AddKeg from './AddKeg';
 import { Link } from 'react-router-dom';
-import users from '../models/userData'; 
 
-function Login(){
+function Login(props){
 	let _username=null;
 	let _password=null;
 
@@ -44,7 +41,7 @@ function Login(){
 					</thead>
 					<tbody>
 						{
-							users.map((user,index)=>{
+							props.users.map((user,index)=>{
 								return (
 									<tr key={index}>
 										<td>{user.username}</td>

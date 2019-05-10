@@ -1,4 +1,4 @@
-const users=[
+const userArray=[
 	{	
 		username:'managerMark',
 		password:'coolPa$$word',
@@ -16,4 +16,4 @@ const users=[
 	},
 ]
 
-export default users;
+export default userArray;
