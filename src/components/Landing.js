@@ -1,6 +1,5 @@
 import React from 'react';
 import beer from '../img/beer.jpg';
-import { Link } from 'react-router-dom';
 
 function Landing(){
 	const layout={
@@ -32,8 +31,6 @@ function Landing(){
 			<div style={darkScreen}>
 				<div style={title}>
 					<h1 style={{marginBottom:'3vw'}}>React Taproom</h1>
-					<Link to='/public'><div className='blue-btn'>See what's on tap</div></Link>
-					<Link to='/login'><div className='red-btn'>Log in</div></Link>
 				</div>
 			</div>
 		</div>

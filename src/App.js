@@ -8,6 +8,7 @@ import NotFound from './components/NotFound';
 import Inventory from './components/Inventory';
 import Taproom from './components/Taproom';
 import Management from './components/Management';
+import Navbar from './components/Navbar';
 
 import kegArray from './models/kegData';
 import userArray from './models/userData'; 
@@ -41,6 +42,7 @@ class App extends Component{
     return (
      <Router>
       <div>
+        <Navbar />
         <Switch>
           <Route exact path='/' component={Landing} />
           <Route path='/login' render={()=><Login users={userArray} onLogin={this.handleLogin} />} />

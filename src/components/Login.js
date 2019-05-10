@@ -1,6 +1,5 @@
 import React from 'react';
 import flight from '../img/flight.jpg'
-import { Link } from 'react-router-dom';
 
 function Login(props){
 	let _username=null;
@@ -9,7 +8,7 @@ function Login(props){
 	const background={
 		backgroundImage:`url(${flight})`,
 		backgroundSize:'cover',
-		height:'100vh'
+		height:'90vh'
 	}
 	function handleLoginSubmission(event){
 		event.preventDefault();
@@ -18,7 +17,6 @@ function Login(props){
 			_username.value='';
 			_password.value='';
 		}
-
 	}
 
 	return(
@@ -36,7 +34,6 @@ function Login(props){
 					ref={input=>_password=input} />
 				<button type='submit' style={{border:'none', color:'white', width:'100%'}} className='red-btn'>Login</button>
 			</form>
-				<Link to='/public'><div className='blue-btn'>See what's on tap</div></Link>
 				<div style={{backgroundColor:'rgba(0,0,0,0.8)'}}>
 					<h2>Test User Data</h2>
 					<table>
