@@ -11,12 +11,19 @@ function Login(props){
 		backgroundSize:'cover',
 		height:'100vh',
 	}
-	function authenticate(){
+	function handleLoginSubmission(event){
+		event.preventDefault();
+		if(_username.value&&_password.value){
+			props.onLogin({username:_username.value,password:_password.value})
+			_username.value='';
+			_password.value='';
+		}
 
 	}
+
 	return(
 		<div style={background}>
-			<form>
+			<form onSubmit={handleLoginSubmission}>
 				<input 
 					type='text'
 					id='username'

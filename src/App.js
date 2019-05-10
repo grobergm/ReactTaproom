@@ -31,9 +31,9 @@ class App extends Component{
 
   handleLogin(userLogin){
     const matchedUser=userArray.find(user=> {return user.username===userLogin.username});
-      if(matchedUser.password===userLogin.password){
-        this.setState ({user:{username:matchedUser.username,role:matchedUser.role}})
-      }
+    if(matchedUser&&matchedUser.password===userLogin.password){
+      this.setState ({user:{username:matchedUser.username,role:matchedUser.role}})
+    }
   }
 
   render(){
@@ -43,7 +43,7 @@ class App extends Component{
       <div>
         <Switch>
           <Route exact path='/' component={Landing} />
-          <Route path='/login' render={()=><Login users={userArray}/>} />
+          <Route path='/login' render={()=><Login users={userArray} onLogin={this.handleLogin} />} />
           <Route path='/public' render={()=><Public keglist={this.state.taproomKegs}/>} />
           <Route path='/inventory' render={()=><Inventory keglist={this.state.inventoryKegs}/>} />
           <Route path='/taproom' render={()=><Taproom  keglist={this.state.taproomKegs}/>} />
