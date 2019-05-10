@@ -1,7 +1,7 @@
 const userArray=[
 	{	
 		username:'managerMark',
-		password:'coolPa$$word',
+		password:'password',
 		role:'management' 
 	},
 	{	

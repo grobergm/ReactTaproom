@@ -21,9 +21,10 @@ class App extends Component{
       inventoryKegs:[],
       taproomKegs:[],
       sales:[],
-      user:{}
+      user:null
     }
     this.handleLogin=this.handleLogin.bind(this);
+    this.handleLogout=this.handleLogout.bind(this);
   }
  
   componentDidMount(){
@@ -37,6 +38,10 @@ class App extends Component{
     }
   }
 
+  handleLogout(){
+    this.setState({user:null})
+  }
+
   render(){
     console.log(this.state.user);
     return (
@@ -45,7 +50,7 @@ class App extends Component{
         <Navbar />
         <Switch>
           <Route exact path='/' component={Landing} />
-          <Route path='/login' render={()=><Login users={userArray} onLogin={this.handleLogin} />} />
+          <Route path='/login' render={()=><Login userData={userArray} onLogin={this.handleLogin} onLogout={this.handleLogout} user={this.state.user}/>} />
           <Route path='/taproom' render={()=><Taproom keglist={this.state.taproomKegs}/>} />
           <Route component={NotFound} />
         </Switch>
