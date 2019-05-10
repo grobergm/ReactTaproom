@@ -58,8 +58,8 @@ class App extends Component{
         <Navbar />
         <Switch>
           <Route exact path='/' component={Landing} />
-          <Route path='/login' render={()=><Login userData={userArray} onLogin={this.handleLogin} onLogout={this.handleLogout} user={this.state.user}/>} />
-          <Route path='/taproom' render={()=><Taproom keglist={this.state.taproomKegs} onCheckTab={this.handleCheckTab} tabs={this.state.tabs}/>} />
+          <Route path='/login' render={()=><Login userData={userArray} onCheckTab={this.handleCheckTab} onLogin={this.handleLogin} onLogout={this.handleLogout} user={this.state.user}/>} />
+          <Route path='/taproom' render={()=><Taproom keglist={this.state.taproomKegs} tabs={this.state.tabs}/>} />
           <Route component={NotFound} />
         </Switch>
       </div>
