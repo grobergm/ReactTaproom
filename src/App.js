@@ -6,6 +6,9 @@ import Navbar from './components/Navbar';
 import Admin from './components/Admin';
 import Public from './components/Public';
 import NotFound from './components/NotFound';
+import Inventory from './components/Inventory';
+import Taproom from './components/Taproom';
+import Management from './components/Management';
 
 import kegArray from './models/kegData';
 
@@ -19,6 +22,11 @@ class App extends Component{
       user:''
     }
   }
+ 
+  componentDidMount(){
+    this.setState({inventoryKegs:kegArray});
+  }
+
   render(){
     return (
      <Router>
@@ -27,7 +35,10 @@ class App extends Component{
         <Switch>
           <Route exact path='/' component={Landing} />
           <Route path='/admin' component={Admin} />
-          <Route path='/public' component={Public} />
+          <Route path='/public' render={()=><Public keglist={this.state.taproomKegs}/>} />
+          <Route path='/inventory' render={()=><Inventory keglist={this.state.inventoryKegs}/>} />
+          <Route path='/taproom' render={()=><Taproom  keglist={this.state.taproomKegs}/>} />
+          <Route path='/management' render={()=><Management sales={this.state.sales}/>} />
           <Route component={NotFound} />
         </Switch>
       </div>
