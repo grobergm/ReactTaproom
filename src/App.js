@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Landing from './components/Landing';
 import Login from './components/Login';
-import Public from './components/Public';
+import Taproom from './components/Taproom';
 import NotFound from './components/NotFound';
 import Inventory from './components/Inventory';
-import Taproom from './components/Taproom';
+import Servers from './components/Servers';
 import Management from './components/Management';
 import Navbar from './components/Navbar';
 
@@ -46,10 +46,7 @@ class App extends Component{
         <Switch>
           <Route exact path='/' component={Landing} />
           <Route path='/login' render={()=><Login users={userArray} onLogin={this.handleLogin} />} />
-          <Route path='/public' render={()=><Public keglist={this.state.taproomKegs}/>} />
-          <Route path='/inventory' render={()=><Inventory keglist={this.state.inventoryKegs}/>} />
-          <Route path='/taproom' render={()=><Taproom  keglist={this.state.taproomKegs}/>} />
-          <Route path='/management' render={()=><Management sales={this.state.sales}/>} />
+          <Route path='/taproom' render={()=><Taproom keglist={this.state.taproomKegs}/>} />
           <Route component={NotFound} />
         </Switch>
       </div>
