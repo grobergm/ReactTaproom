@@ -1,6 +1,8 @@
 import React from 'react';
 import flight from '../img/flight.jpg';
-
+import Inventory from './Inventory';
+import Server from './Server';
+import Management from './Management';
 import LoginControl from './LoginControl';
 
 function Login(props){
@@ -12,7 +14,14 @@ function Login(props){
 	
 	let content=!props.user ? <LoginControl onLogin={props.onLogin} userData={props.userData} /> :
 		<div>
-			{props.user.username}
+			<h1>Welcome back, {props.user.username}</h1>
+			{
+				props.user.role==='management' ? 
+					<Management /> :
+					props.user.role==='server' ?
+						<Server /> :
+						<Inventory />
+			}
 			<div className='orange-btn' onClick={props.onLogout}>Logout</div>
 		</div>
 

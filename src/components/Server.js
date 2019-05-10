@@ -1,12 +1,13 @@
 import React from 'react';
 
-function Servers(props){
+function Server(props){
 
 	return(
 		<div>
+			Server
 		</div>
 		)
 
 }
 
-export default Servers;
+export default Server;

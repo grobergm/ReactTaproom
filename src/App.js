@@ -5,9 +5,7 @@ import Landing from './components/Landing';
 import Login from './components/Login';
 import Taproom from './components/Taproom';
 import NotFound from './components/NotFound';
-import Inventory from './components/Inventory';
-import Servers from './components/Servers';
-import Management from './components/Management';
+
 import Navbar from './components/Navbar';
 
 import kegArray from './models/kegData';

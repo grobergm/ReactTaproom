@@ -4,6 +4,7 @@ function Management(props){
 
 	return(
 		<div>
+			Management Component
 		</div>
 		)
 
