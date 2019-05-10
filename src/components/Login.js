@@ -9,7 +9,7 @@ function Login(props){
 	const background={
 		backgroundImage:`url(${flight})`,
 		backgroundSize:'cover',
-		height:'100vh',
+		height:'100vh'
 	}
 	function handleLoginSubmission(event){
 		event.preventDefault();
@@ -22,8 +22,8 @@ function Login(props){
 	}
 
 	return(
-		<div style={background}>
-			<form onSubmit={handleLoginSubmission}>
+		<div className='flex-col' style={background}>
+			<form className='flex-col' onSubmit={handleLoginSubmission}>
 				<input 
 					type='text'
 					id='username'
@@ -34,31 +34,33 @@ function Login(props){
 					id='password'
 					placeholder='password'
 					ref={input=>_password=input} />
-				<button type='submit' style={{border:'none', color:'white'}} className='red-btn'>Login</button>
+				<button type='submit' style={{border:'none', color:'white', width:'100%'}} className='red-btn'>Login</button>
 			</form>
 				<Link to='/public'><div className='blue-btn'>See what's on tap</div></Link>
-				<h2>Test User Data</h2>
-				<table>
-					<thead>
-						<tr>
-							<th>Username</th>
-							<th>Password</th>
-							<th>Role</th>
-						</tr>
-					</thead>
-					<tbody>
-						{
-							props.users.map((user,index)=>{
-								return (
-									<tr key={index}>
-										<td>{user.username}</td>
-										<td>{user.password}</td>
-										<td>{user.role}</td>
-									</tr>)
-							})
-						}
-					</tbody>
-				</table>
+				<div style={{backgroundColor:'rgba(0,0,0,0.8)'}}>
+					<h2>Test User Data</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Username</th>
+								<th>Password</th>
+								<th>Role</th>
+							</tr>
+						</thead>
+						<tbody>
+							{
+								props.users.map((user,index)=>{
+									return (
+										<tr key={index}>
+											<td>{user.username}</td>
+											<td>{user.password}</td>
+											<td>{user.role}</td>
+										</tr>)
+								})
+							}
+						</tbody>
+					</table>
+				</div>
 		</div>
 		)
 }
