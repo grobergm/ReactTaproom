@@ -1,5 +1,5 @@
 import React from 'react';
-import flight from '../img/flight.jpg';
+import flight from '../../img/flight.jpg';
 import Inventory from './Inventory';
 import Server from './Server';
 import Management from './Management';

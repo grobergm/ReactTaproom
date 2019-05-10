@@ -1,6 +1,6 @@
 import React from 'react';
 import Keg from './Keg';
-import kegArray from '../models/kegData';
+import kegArray from '../../models/kegData';
 
 function KegList(props){
 	

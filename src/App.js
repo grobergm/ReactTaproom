@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Landing from './components/Landing';
-import Login from './components/Login';
-import Taproom from './components/Taproom';
+import Login from './components/staff/Login';
+import Taproom from './components/customers/Taproom';
 import NotFound from './components/NotFound';
 
 import Navbar from './components/Navbar';

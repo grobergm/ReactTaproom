@@ -1,7 +1,7 @@
 import React from 'react';
-import kegroom from '../img/admin.jpg'
-import KegList from './KegList'
-import AddKeg from './AddKeg';
+import kegroom from '../../img/admin.jpg'
+import KegList from '../kegs/KegList'
+import AddKeg from '../kegs/AddKeg';
 
 
 function Admin(){

@@ -1,6 +1,6 @@
 import React from 'react';
-import pour from '../img/keglist.jpg';
-import KegList from './KegList'
+import pour from '../../img/keglist.jpg';
+import KegList from '../kegs/KegList'
 
 
 function Taproom(){
