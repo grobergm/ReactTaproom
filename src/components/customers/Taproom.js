@@ -1,9 +1,9 @@
 import React from 'react';
 import pour from '../../img/keglist.jpg';
-import KegList from '../kegs/KegList'
+import KegList from '../kegs/KegList';
+import Tab from './Tab';
 
-
-function Taproom(){
+function Taproom(props){
 	const background={
 		backgroundImage:`url(${pour})`,
 		backgroundSize:'cover',
@@ -13,6 +13,7 @@ function Taproom(){
 		<div style={background} >
 			<h1>Current Selection</h1>
 			<KegList admin={false} />
+			<Tab onCheckTab={props.onCheckTab} tabs={props.tabs} />
 		</div>
 	)
 };

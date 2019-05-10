@@ -18,15 +18,25 @@ class App extends Component{
     this.state={
       inventoryKegs:[],
       taproomKegs:[],
-      sales:[],
+      tabs:[],
       user:null
     }
+    this.handleCheckTab=this.handleCheckTab.bind(this);
     this.handleLogin=this.handleLogin.bind(this);
     this.handleLogout=this.handleLogout.bind(this);
   }
  
   componentDidMount(){
     this.setState({inventoryKegs:kegArray});
+  }
+
+  handleCheckTab(tabEntered){
+    let openTab=this.state.tabs.find(tab=>{return tab.table===tabEntered.table});
+    if(!openTab){
+      const newTabs=this.state.tabs.slice();
+      newTabs.push(tabEntered);
+      this.setState({tabs:newTabs});
+    }
   }
 
   handleLogin(userLogin){
@@ -41,7 +51,7 @@ class App extends Component{
   }
 
   render(){
-    console.log(this.state.user);
+    console.log(this.state.tabs);
     return (
      <Router>
       <div>
@@ -49,7 +59,7 @@ class App extends Component{
         <Switch>
           <Route exact path='/' component={Landing} />
           <Route path='/login' render={()=><Login userData={userArray} onLogin={this.handleLogin} onLogout={this.handleLogout} user={this.state.user}/>} />
-          <Route path='/taproom' render={()=><Taproom keglist={this.state.taproomKegs}/>} />
+          <Route path='/taproom' render={()=><Taproom keglist={this.state.taproomKegs} onCheckTab={this.handleCheckTab} tabs={this.state.tabs}/>} />
           <Route component={NotFound} />
         </Switch>
       </div>
