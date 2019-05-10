@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Landing(){
 	const layout={
 		width:'100%',
-		height:'90vh',
+		height:'100vh',
 		backgroundImage:`url(${beer})`,
 		backgroundSize:'cover',
 		backgroundPosition:'left',
@@ -33,6 +33,7 @@ function Landing(){
 				<div style={title}>
 					<h1 style={{marginBottom:'3vw'}}>React Taproom</h1>
 					<Link to='/public'><div className='blue-btn'>See what's on tap</div></Link>
+					<Link to='/login'><div className='red-btn'>Log in</div></Link>
 				</div>
 			</div>
 		</div>
