@@ -6,7 +6,7 @@ function NewTabControl(props){
 
 	function handleTab(event){
 		event.preventDefault();
-		props.onCheckTab({tabName:_tabName.value,table:_table.value});
+		props.onCheckTab({tabName:_tabName.value,table:_table.value,order:[]});
 	}
 	return(
 		<div>

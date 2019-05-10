@@ -8,7 +8,7 @@ function Server(props){
 		<div>
 			Server
 			<NewTabControl onCheckTab={props.onCheckTab} />
-			<Tab tabs={props.tabs} />
+			<Tab kegs={props.kegs} tabs={props.tabs} onAddDrinkToTab={props.onAddDrinkToTab} />
 		</div>
 		)
 

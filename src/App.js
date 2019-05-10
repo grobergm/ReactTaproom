@@ -16,18 +16,18 @@ class App extends Component{
   constructor(){
     super();
     this.state={
-      inventoryKegs:[],
-      taproomKegs:[],
+      kegs:[],
       tabs:[],
       user:null
     }
     this.handleCheckTab=this.handleCheckTab.bind(this);
+    this.handleAddDrinkToTab=this.handleAddDrinkToTab.bind(this);
     this.handleLogin=this.handleLogin.bind(this);
     this.handleLogout=this.handleLogout.bind(this);
   }
  
   componentDidMount(){
-    this.setState({inventoryKegs:kegArray});
+    this.setState({kegs:kegArray});
   }
 
   handleCheckTab(tabEntered){
@@ -37,6 +37,13 @@ class App extends Component{
       newTabs.push(tabEntered);
       this.setState({tabs:newTabs});
     }
+  }
+
+  handleAddDrinkToTab(tabSelected,drink){
+    let newTabs=this.state.tabs.slice();
+    let selectedTabIndex=this.state.tabs.findIndex(tab=>{return tab.table===tabSelected});
+    newTabs[selectedTabIndex].order.push(drink);
+    console.log(newTabs);
   }
 
   handleLogin(userLogin){
@@ -51,15 +58,25 @@ class App extends Component{
   }
 
   render(){
-    console.log(this.state.tabs);
     return (
      <Router>
       <div>
         <Navbar />
         <Switch>
           <Route exact path='/' component={Landing} />
-          <Route path='/login' render={()=><Login  tabs={this.state.tabs} userData={userArray} onCheckTab={this.handleCheckTab} onLogin={this.handleLogin} onLogout={this.handleLogout} user={this.state.user}/>} />
-          <Route path='/taproom' render={()=><Taproom keglist={this.state.taproomKegs}/>} />
+          <Route 
+            path='/login' 
+            render={()=>
+              <Login 
+                tabs={this.state.tabs}
+                onAddDrinkToTab={this.handleAddDrinkToTab}
+                kegs={this.state.kegs}
+                userData={userArray} 
+                onCheckTab={this.handleCheckTab} 
+                onLogin={this.handleLogin} 
+                onLogout={this.handleLogout} 
+                user={this.state.user}/>} />
+          <Route path='/taproom' render={()=><Taproom keglist={this.state.kegs}/>} />
           <Route component={NotFound} />
         </Switch>
       </div>

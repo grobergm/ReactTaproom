@@ -6,8 +6,11 @@ class Tab extends Component{
 		this.state={
 			tabSelected:null,
 			tab:null,
+			drinkSelected:null
 		}
 		this.handleChangeTab=this.handleChangeTab.bind(this);
+		this.handleBeerSubmission=this.handleBeerSubmission.bind(this);
+		this.handleSelectBeer=this.handleSelectBeer.bind(this);
 	}
 
 	handleChangeTab(event){
@@ -20,8 +23,16 @@ class Tab extends Component{
 		this.setState({tab:currentTab})
 	}
 
-	render(){
+	handleSelectBeer(event){
+		this.setState({drinkSelected:event.target.value});
+	}
 
+	handleBeerSubmission(event){
+    event.preventDefault();
+    this.props.onAddDrinkToTab(this.state.tabSelected,this.state.drinkSelected)
+	}
+
+	render(){
 	return(
 
 		<div style={{margin:'2rem 25%'}} className='dark-background'>
@@ -33,7 +44,31 @@ class Tab extends Component{
 				min='0'
 				max='30'
 				placeholder='number' />
-			<h2>{this.state.tab?this.state.tab.tabName:'No Tabs'}</h2>
+			{
+				this.state.tab ?
+				 <div>
+						<h2>{this.state.tab.tabName}</h2>
+						<form onSubmit={this.handleBeerSubmission}>
+							<select value={this.state.drinkSelected} onChange={this.handleSelectBeer}>
+								{
+									this.props.kegs.map(keg=>{
+										return <option value={keg.name}>{keg.name}</option>
+									})
+								}
+							</select>
+							<button type='submit'>Add To Tab</button>
+						</form>
+						<div>
+							{
+								this.state.tab.order.map(drink=>{
+									return <p>{drink}</p>
+								})
+							}
+						</div>
+				 </div> 
+				 :
+				 <p>No Tabs Open</p>
+			}
 		</div>
 		)
 	}
