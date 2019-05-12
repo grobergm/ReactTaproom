@@ -13,6 +13,10 @@ class Tab extends Component{
 		this.handleSelectBeer=this.handleSelectBeer.bind(this);
 	}
 
+	componentDidMount(){
+		this.setState({drinkSelected:this.props.kegs[0].name})
+	}
+
 	handleChangeTab(event){
 		this.setState({tabSelected:event.target.value});
 		this.handleShowTab(event.target.value);
@@ -29,7 +33,8 @@ class Tab extends Component{
 
 	handleBeerSubmission(event){
     event.preventDefault();
-    this.props.onAddDrinkToTab(this.state.tabSelected,this.state.drinkSelected)
+    this.props.onAddDrinkToTab(this.state.tabSelected,this.state.drinkSelected);
+    this.handleShowTab(this.state.tabSelected);
 	}
 
 	render(){

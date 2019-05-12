@@ -7,10 +7,12 @@ function NewTabControl(props){
 	function handleTab(event){
 		event.preventDefault();
 		props.onCheckTab({tabName:_tabName.value,table:_table.value,order:[]});
+		_table.value='';
+		_tabName.value='';
+
 	}
 	return(
 		<div>
-		TEst
 			<form onSubmit={handleTab}>
 				<input
 					type='number'
