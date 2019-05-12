@@ -24,6 +24,7 @@ class App extends Component{
     this.handleAddDrinkToTab=this.handleAddDrinkToTab.bind(this);
     this.handleLogin=this.handleLogin.bind(this);
     this.handleLogout=this.handleLogout.bind(this);
+    this.handlePourDrink=this.handlePourDrink.bind(this);
   }
  
   componentDidMount(){
@@ -44,6 +45,21 @@ class App extends Component{
     let selectedTabIndex=this.state.tabs.findIndex(tab=>{return tab.table===tabSelected});
     newTabs[selectedTabIndex].order.push(drink);
     console.log(newTabs);
+  }
+
+  handlePourDrink(drinkName,drinkIndex,tabSelected,bartender){
+    if(bartender){
+      let newTabs=this.state.tabs.slice();
+      let selectedTabIndex=this.state.tabs.findIndex(tab=>{return tab.table===tabSelected});
+      if(newTabs[selectedTabIndex].order[drinkIndex].poured===false){
+        newTabs[selectedTabIndex].order[drinkIndex].poured=true;
+        this.setState({tabs:newTabs})
+        let newKegs=this.state.kegs.slice();
+        let selectedKegIndex=this.state.kegs.findIndex(keg=>{return keg.name===drinkName});
+        newKegs[selectedKegIndex].pints++;
+        this.setState({kegs:newKegs});
+      }
+    }
   }
 
   handleLogin(userLogin){
@@ -70,6 +86,7 @@ class App extends Component{
               <Staff 
                 tabs={this.state.tabs}
                 onAddDrinkToTab={this.handleAddDrinkToTab}
+                onPourDrink={this.handlePourDrink}
                 kegs={this.state.kegs}
                 userData={userArray} 
                 onCheckTab={this.handleCheckTab} 

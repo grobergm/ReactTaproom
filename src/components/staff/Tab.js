@@ -33,9 +33,10 @@ class Tab extends Component{
 
 	handleBeerSubmission(event){
     event.preventDefault();
-    this.props.onAddDrinkToTab(this.state.tabSelected,this.state.drinkSelected);
+    this.props.onAddDrinkToTab(this.state.tabSelected,{name:this.state.drinkSelected, poured:false});
     this.handleShowTab(this.state.tabSelected);
 	}
+
 
 	render(){
 	return(
@@ -65,8 +66,11 @@ class Tab extends Component{
 						</form>
 						<div>
 							{
-								this.state.tab.order.map(drink=>{
-									return <p>{drink}</p>
+								this.state.tab.order.map((drink,index)=>{
+									return <p
+													className={drink.poured ? 'poured' : 'not-poured'} 
+													onClick={()=>this.props.onPourDrink(drink.name,index,this.state.tabSelected,this.props.isBartender)} 
+													key={index}>{drink.name}</p>
 								})
 							}
 						</div>

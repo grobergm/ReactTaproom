@@ -8,7 +8,7 @@ function Server(props){
 		<div className='flex-col'>
 			Server
 			<NewTabControl onCheckTab={props.onCheckTab} />
-			<Tab kegs={props.kegs} tabs={props.tabs} onAddDrinkToTab={props.onAddDrinkToTab} />
+			<Tab isBartender={false} kegs={props.kegs} tabs={props.tabs} onAddDrinkToTab={props.onAddDrinkToTab} onPourDrink={props.onPourDrink}/>
 		</div>
 		)
 

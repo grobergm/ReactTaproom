@@ -19,8 +19,8 @@ function Staff(props){
 				props.user.role==='management' ? 
 					<Management /> :
 					props.user.role==='server' ?
-					<Server onCheckTab={props.onCheckTab} tabs={props.tabs} kegs={props.kegs} onAddDrinkToTab={props.onAddDrinkToTab} /> :
-					<Bartender kegs={props.kegs} tabs={props.tabs} />
+					<Server onCheckTab={props.onCheckTab} tabs={props.tabs} kegs={props.kegs} onPourDrink={props.onPourDrink} onAddDrinkToTab={props.onAddDrinkToTab} /> :
+					<Bartender kegs={props.kegs} onCheckTab={props.onCheckTab} tabs={props.tabs} onPourDrink={props.onPourDrink} onAddDrinkToTab={props.onAddDrinkToTab}/>
 			}
 			<button className='orange-btn' onClick={props.onLogout}>Logout</button>
 		</div>
