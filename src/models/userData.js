@@ -10,9 +10,9 @@ const userArray=[
 		role:'server' 
 	},
 	{	
-		username:'i',
-		password:'i',
-		role:'inventory' 
+		username:'b',
+		password:'b',
+		role:'bartender' 
 	},
 ]
 

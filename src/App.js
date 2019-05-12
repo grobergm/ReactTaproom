@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Landing from './components/Landing';
-import Login from './components/staff/Login';
+import Staff from './components/staff/Staff';
 import Taproom from './components/customers/Taproom';
 import NotFound from './components/NotFound';
 
@@ -65,9 +65,9 @@ class App extends Component{
         <Switch>
           <Route exact path='/' component={Landing} />
           <Route 
-            path='/login' 
+            path='/staff' 
             render={()=>
-              <Login 
+              <Staff 
                 tabs={this.state.tabs}
                 onAddDrinkToTab={this.handleAddDrinkToTab}
                 kegs={this.state.kegs}
@@ -76,7 +76,7 @@ class App extends Component{
                 onLogin={this.handleLogin} 
                 onLogout={this.handleLogout} 
                 user={this.state.user}/>} />
-          <Route path='/taproom' render={()=><Taproom keglist={this.state.kegs}/>} />
+          <Route path='/taproom' render={()=><Taproom kegs={this.state.kegs}/>} />
           <Route component={NotFound} />
         </Switch>
       </div>

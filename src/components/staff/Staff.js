@@ -1,11 +1,11 @@
 import React from 'react';
 import flight from '../../img/flight.jpg';
-import Inventory from './Inventory';
+import Bartender from './Bartender';
 import Server from './Server';
 import Management from './Management';
 import LoginControl from './LoginControl';
 
-function Login(props){
+function Staff(props){
 	const background={
 		backgroundImage:`url(${flight})`,
 		backgroundSize:'cover',
@@ -19,17 +19,17 @@ function Login(props){
 				props.user.role==='management' ? 
 					<Management /> :
 					props.user.role==='server' ?
-					<Server onCheckTab={props.onCheckTab} tabs={props.tabs} kegs={props.kegs} onAddDrinkToTab={props.onAddDrinkToTab}/> :
-					<Inventory />
+					<Server onCheckTab={props.onCheckTab} tabs={props.tabs} kegs={props.kegs} onAddDrinkToTab={props.onAddDrinkToTab} /> :
+					<Bartender kegs={props.kegs} tabs={props.tabs} />
 			}
-			<div className='orange-btn' onClick={props.onLogout}>Logout</div>
+			<button className='orange-btn' onClick={props.onLogout}>Logout</button>
 		</div>
 
 	return(
-		<div className='flex-col' style={background}>
+		<div style={background}>
 			{content}
 		</div>
 		)
 }
 
-export default Login;
+export default Staff;

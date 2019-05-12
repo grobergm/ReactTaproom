@@ -19,7 +19,7 @@ function Navbar(){
 		<div style={layout}>
 				<Link to='/'><p style={navItems}>Home</p></Link>
 				<Link to='/taproom'><p style={navItems}>Taproom</p></Link>
-				<Link to='/login'><p style={navItems}>Login</p></Link>
+				<Link to='/staff'><p style={navItems}>Staff</p></Link>
 		</div>
 		)
 }

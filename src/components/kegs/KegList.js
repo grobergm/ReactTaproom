@@ -1,6 +1,5 @@
 import React from 'react';
 import Keg from './Keg';
-import kegArray from '../../models/kegData';
 
 function KegList(props){
 	
@@ -15,7 +14,7 @@ function KegList(props){
 	return(
 		<div style={grid}>	
 			{
-				kegArray.map((keg,index)=>{
+				props.kegs.map((keg,index)=>{
 					return <Keg 
 									id={keg.id}
 									name={keg.name}

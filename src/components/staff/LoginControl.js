@@ -13,7 +13,7 @@ function LoginControl(props){
 		}
 	}
 	return(
-		<div>
+		<div className='flex-col'>
 			<form className='flex-col' onSubmit={handleLoginSubmission}>
 				<input 
 					type='text'
