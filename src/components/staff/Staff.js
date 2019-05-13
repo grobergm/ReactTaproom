@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import flight from '../../img/flight.jpg';
-import Bartender from './Bartender';
 import Server from './Server';
 import Management from './Management';
 import LoginControl from './LoginControl';
+import userArray from '../../models/userData'; 
 
 class Staff extends Component{
 	constructor(props){
@@ -60,7 +60,7 @@ class Staff extends Component{
     newTabs[selectedTabIndex].order.forEach(drink=>{
       total+=drink.price
     });
-    total+tip;
+    total+=tip;
     newTabs[selectedTabIndex].open=false;
     newTabs[selectedTabIndex].total=total;
   }
@@ -93,20 +93,20 @@ class Staff extends Component{
 			height:'90vh'
 		}
 		
-		let content=!props.user ? <LoginControl onLogin={props.onLogin} userData={props.userData} /> :
+		let content=!this.state.user ? <LoginControl onLogin={this.handleLogin} userData={userArray} /> :
 			<div>
-				<h1>Logged in as: {props.user.username}</h1>
+				<h1>Logged in as: {this.state.user.username}</h1>
 				{
-					props.user.role==='management' ? 
+					this.state.user.role==='management' ? 
 						<Management /> :
 						<Server 
-							onCheckTab={props.onCheckTab} 
-							tabs={props.tabs} 
-							kegs={props.kegs} 
-							onPourDrink={props.onPourDrink} 
-							onAddDrinkToTab={props.onAddDrinkToTab} />
+							onCheckTab={this.handleCheckTab} 
+							tabs={this.state.tabs} 
+							kegs={this.props.kegs} 
+							onPourDrink={this.handlePourDrink} 
+							onAddDrinkToTab={this.handleAddDrinkToTab} />
 				}
-				<button className='orange-btn' onClick={props.onLogout}>Logout</button>
+				<button className='orange-btn' onClick={this.onLogout}>Logout</button>
 			</div>
 
 		return(

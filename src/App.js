@@ -9,7 +9,6 @@ import NotFound from './components/NotFound';
 import Navbar from './components/Navbar';
 
 import kegArray from './models/kegData';
-import userArray from './models/userData'; 
 
 
 class App extends Component{
