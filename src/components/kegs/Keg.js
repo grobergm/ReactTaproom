@@ -1,5 +1,5 @@
 import React from 'react';
-import EditKeg from './EditKeg';
+import AddToTab from './AddToTab';
 import DeleteKeg from './DeleteKeg';
 import KegFill from './KegFill';
 import PourDrink from './PourDrink';
@@ -18,7 +18,7 @@ function Keg(props){
 			{
 				props.admin ? 
 				<div style={{display:'flex', justifyContent:'space-around'}}>
-					<EditKeg id={props.id} />
+					<AddToTab onAddDrinkToTab={props.onAddDrinkToTab} />
 				</div> 
 				: null
 			}
@@ -27,8 +27,8 @@ function Keg(props){
 			<p>{props.type}</p>
 			<p>${props.price} ABV:{props.abv}</p>
 			<KegFill pints={props.pints} />
-			{props.admin ? <PourDrink id={props.id} onPourDrink={()=>props.onPourDrink(props.id)} />: null}
-			{props.pints > 100 ? <DeleteKeg onDeleteKeg={()=>props.onDeleteKeg(props.id)} /> : null}
+			{props.admin ? <PourDrink id={props.id} onPourDrink={props.onPourDrink}/>: null}
+			{props.admin&&props.pints > 100 ? <DeleteKeg onDeleteKeg={props.onDeleteKeg}/> : null}
 		</div>
 		)
 }

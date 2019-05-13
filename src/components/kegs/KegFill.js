@@ -13,7 +13,6 @@ function KegFill(props){
 		height:'100%',
 		transform:`translateX(-${props.pints/124*100}%)`
 	}
-	console.log(props.pints)
 	return(
 
 		<div style={keg}>

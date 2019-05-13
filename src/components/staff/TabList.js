@@ -5,7 +5,7 @@ function TabList (props){
 		<div style={{margin:'2rem 25%'}} className='dark-background'>
 			{
 				props.tabList.map(tab=>{
-				return <p onClick={()=>props.onSelectTab(tab)}>{tab.tabName}</p>
+				return <p key={tab.id} onClick={()=>props.onSelectTab(tab)}>{tab.tabName}</p>
 				})
 			}
 		</div>

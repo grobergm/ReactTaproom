@@ -21,7 +21,7 @@ function Server(props){
 				onDeleteKeg={props.onDeleteKeg} />
 			<NewTabControl onAddTab={props.onAddTab} />
 			{
-				props.tabSelected ? <TabSelected tab={props.tabSelected} /> :	null
+				props.tabSelected ? <TabSelected tab={props.tabSelected} onTabPourDrink={props.onTabPourDrink} /> :	null
 			}
 			<TabList onSelectTab={props.onSelectTab} tabList={props.tabs} onTabPourDrink={props.onTabPourDrink}   />
 

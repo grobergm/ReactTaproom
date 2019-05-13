@@ -27,16 +27,20 @@ class Staff extends Component{
     this.setState({tabs:newTabs});
   }
 
-  handleAddDrinkToTab(tabNumber,drink){
-    let newTabs=this.state.tabs.slice();
-    let selectedTabIndex=this.state.tabs.findIndex(tab=>{return tab.table===tabNumber});
-    newTabs[selectedTabIndex].order.push(drink);
-    console.log(newTabs);
+  handleAddDrinkToTab(drink){
+  	if(this.state.tabSelected){
+  		let newTabs=this.state.tabs.slice();
+		  let selectedTabIndex=this.state.tabs.findIndex(tab=>{return tab.id===this.state.tabSelected.id});
+		  drink.poured=false;
+		  newTabs[selectedTabIndex].order.push(drink);
+		  this.handleSelectTab(newTabs[selectedTabIndex]);
+  	}
   }
 
   handleTabPourDrink(drinkID,drinkIndex){
+  	console.log(drinkIndex)
     let newTabs=this.state.tabs.slice();
-    let selectedTabIndex=this.state.tabs.findIndex(tab=>{return tab.id===this.state.tabSelected});
+    let selectedTabIndex=this.state.tabs.findIndex(tab=>{return tab.id===this.state.tabSelected.id});
     if(newTabs[selectedTabIndex].order[drinkIndex].poured===false){
       newTabs[selectedTabIndex].order[drinkIndex].poured=true;
       this.setState({tabs:newTabs})
