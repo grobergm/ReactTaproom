@@ -18,7 +18,6 @@ class App extends Component{
     this.state={
       kegs:[],
       tabs:[],
-      closedTabs:[],
       user:null
     }
     this.handleCheckTab=this.handleCheckTab.bind(this);
@@ -71,7 +70,8 @@ class App extends Component{
       total+=drink.price
     });
     total+tip;
-    newTabs[selectedTabIndex]
+    newTabs[selectedTabIndex].open=false;
+    newTabs[selectedTabIndex].total=total;
   }
 
   handleLogin(userLogin){
