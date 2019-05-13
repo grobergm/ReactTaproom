@@ -16,6 +16,7 @@ function KegList(props){
 			{
 				props.kegs.map((keg,index)=>{
 					return <Keg 
+									onPourDrink={props.onPourDrink}
 									id={keg.id}
 									name={keg.name}
 									brewery={keg.brewery}

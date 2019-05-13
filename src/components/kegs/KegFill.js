@@ -11,15 +11,13 @@ function KegFill(props){
 	const fill={
 		backgroundColor:'rgb(242,238,174)',
 		height:'100%',
-		transform:`translateX(-${props.pints/124*100}%)`,
-		color:'black'
+		transform:`translateX(-${props.pints/124*100}%)`
 	}
 	console.log(props.pints)
 	return(
 
 		<div style={keg}>
 			<div style={fill}>
-				{124-props.pints} Pints left
 			</div>
 		</div>
 		)

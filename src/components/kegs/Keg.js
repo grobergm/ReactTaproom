@@ -2,7 +2,7 @@ import React from 'react';
 import EditKeg from './EditKeg';
 import DeleteKeg from './DeleteKeg';
 import KegFill from './KegFill';
-import SellPint from './SellPint';
+import PourDrink from './PourDrink';
 
 
 function Keg(props){
@@ -28,7 +28,7 @@ function Keg(props){
 			<p>{props.type}</p>
 			<p>${props.price} ABV:{props.abv}</p>
 			<KegFill pints={props.pints} />
-			{props.admin ? <SellPint /> : null}
+			{props.admin ? <PourDrink onPourDrink={()=>props.onPourDrink(props.id)} /> : null}
 		</div>
 		)
 }

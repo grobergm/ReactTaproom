@@ -18,7 +18,7 @@ class Staff extends Component{
     this.handleAddDrinkToTab=this.handleAddDrinkToTab.bind(this);
     this.handleLogin=this.handleLogin.bind(this);
     this.handleLogout=this.handleLogout.bind(this);
-    this.handlePourDrink=this.handlePourDrink.bind(this);
+    this.handleTabPourDrink=this.handleTabPourDrink.bind(this);
 	}
 
 	handleAddTab(tabEntered){
@@ -34,18 +34,13 @@ class Staff extends Component{
     console.log(newTabs);
   }
 
-  handlePourDrink(drinkName,drinkIndex,tabNumber,bartender){
-    if(bartender){
-      let newTabs=this.state.tabs.slice();
-      let selectedTabIndex=this.state.tabs.findIndex(tab=>{return tab.table===tabNumber});
-      if(newTabs[selectedTabIndex].order[drinkIndex].poured===false){
-        newTabs[selectedTabIndex].order[drinkIndex].poured=true;
-        this.setState({tabs:newTabs})
-        let newKegs=this.state.kegs.slice();
-        let selectedKegIndex=this.state.kegs.findIndex(keg=>{return keg.name===drinkName});
-        newKegs[selectedKegIndex].pints++;
-        this.setState({kegs:newKegs});
-      }
+  handleTabPourDrink(drinkID,drinkIndex){
+    let newTabs=this.state.tabs.slice();
+    let selectedTabIndex=this.state.tabs.findIndex(tab=>{return tab.id===this.state.tabSelected});
+    if(newTabs[selectedTabIndex].order[drinkIndex].poured===false){
+      newTabs[selectedTabIndex].order[drinkIndex].poured=true;
+      this.setState({tabs:newTabs})
+      this.props.onPourDrink(drinkID);
     }
   }
 
@@ -94,7 +89,8 @@ class Staff extends Component{
 							tabs={this.state.tabs} 
 							tabSelected={this.state.tabSelected}
 							kegs={this.props.kegs} 
-							onPourDrink={this.handlePourDrink} 
+							onPourDrink={this.props.onPourDrink} 
+							onTabPourDrink={this.handleTabPourDrink} 
 							onAddDrinkToTab={this.handleAddDrinkToTab}
 							onSelectTab={this.handleSelectTab} />
 				}

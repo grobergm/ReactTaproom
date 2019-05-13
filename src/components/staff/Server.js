@@ -13,12 +13,12 @@ function Server(props){
 		<div>
 			<h1>Server</h1>
 			<AddKeg />
-			<KegList kegs={props.kegs} admin={true} />
+			<KegList kegs={props.kegs} admin={true} onPourDrink={props.onPourDrink} onAddDrinkToTab={props.onAddDrinkToTab}  />
 			<NewTabControl onAddTab={props.onAddTab} />
 			{
 				props.tabSelected ? <TabSelected tab={props.tabSelected} /> :	null
 			}
-			<TabList onSelectTab={props.onSelectTab} tabList={props.tabs} onAddDrinkToTab={props.onAddDrinkToTab} onPourDrink={props.onPourDrink}/>
+			<TabList onSelectTab={props.onSelectTab} tabList={props.tabs} onTabPourDrink={props.onTabPourDrink}   />
 
 		</div>
 		)

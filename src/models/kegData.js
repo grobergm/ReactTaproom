@@ -1,5 +1,6 @@
 const kegArray=[
 	{
+		id:'asdasdsadeawe',
 		name:'Green Flash',
 		brewery:'Deschutes',
 		type:'IPA',
@@ -8,6 +9,7 @@ const kegArray=[
 		pints:0
 	},
 	{
+		id:'dfsgdsfgdfsg',
 		name:'Sleigher',
 		brewery:'Ninkasi',
 		type:'Dark Ale',
@@ -16,6 +18,7 @@ const kegArray=[
 		pints:0
 	},
 	{
+		id:'ghjhgfdghdsfgs',
 		name:'RPM',
 		brewery:'BoneYard',
 		type:'IPA',
@@ -24,6 +27,7 @@ const kegArray=[
 		pints:0
 	},
 	{
+		id:'ffhjgfjgfjkgfhj',
 		name:'Clear Mind',
 		brewery:'Brew Dr',
 		type:'Kombucha',
