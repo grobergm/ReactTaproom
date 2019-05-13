@@ -20,10 +20,11 @@ function Server(props){
 				onAddDrinkToTab={props.onAddDrinkToTab}
 				onDeleteKeg={props.onDeleteKeg} />
 			<NewTabControl onAddTab={props.onAddTab} />
+			<TabList onSelectTab={props.onSelectTab} tabList={props.tabs} onTabPourDrink={props.onTabPourDrink}   />
+			
 			{
 				props.tabSelected ? <TabSelected tab={props.tabSelected} onTabPourDrink={props.onTabPourDrink} /> :	null
 			}
-			<TabList onSelectTab={props.onSelectTab} tabList={props.tabs} onTabPourDrink={props.onTabPourDrink}   />
 
 		</div>
 		)

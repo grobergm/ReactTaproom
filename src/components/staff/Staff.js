@@ -98,7 +98,7 @@ class Staff extends Component{
 							onSelectTab={this.handleSelectTab}
 							onDeleteKeg={this.props.onDeleteKeg} />
 				}
-				<button className='orange-btn' onClick={this.onLogout}>Logout</button>
+				<button className='orange-btn' onClick={this.handleLogout}>Logout</button>
 			</div>
 
 		return(

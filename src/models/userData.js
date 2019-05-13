@@ -12,7 +12,7 @@ const userArray=[
 	{	
 		username:'b',
 		password:'b',
-		role:'bartender' 
+		role:'server' 
 	},
 ]
 

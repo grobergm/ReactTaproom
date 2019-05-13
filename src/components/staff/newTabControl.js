@@ -14,20 +14,21 @@ function NewTabControl(props){
 	}
 	return(
 		<div>
+			<h2>Open a New Tab</h2>
 			<form onSubmit={handleTab}>
 				<input
 					type='number'
 					id='table'
 					min='0'
 					max='30'
-					placeholder='number' 
+					placeholder='Table' 
 					ref={(input)=>{_table=input;}} />
 				<input
 					type='text'
 					id='tabName'
 					placeholder='Name' 
 					ref={(input)=>{_tabName=input;}} />
-				<button type='submit'>Add New Tab</button>
+				<button className='green-btn' type='submit'>Add New Tab</button>
 			</form>
 		</div>
 	)
