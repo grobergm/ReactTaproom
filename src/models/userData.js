@@ -1,16 +1,16 @@
 const userArray=[
 	{	
-		username:'m',
+		username:'managerMark',
 		password:'m',
 		role:'management' 
 	},
 	{	
-		username:'s',
+		username:'serverSam',
 		password:'s',
 		role:'server' 
 	},
 	{	
-		username:'b',
+		username:'bobette',
 		password:'b',
 		role:'server' 
 	},

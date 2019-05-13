@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import flight from '../../img/flight.jpg';
+import pour from '../../img/keglist.jpg';
 import Server from './Server';
 import Management from './Management';
 import LoginControl from './LoginControl';
@@ -76,14 +76,15 @@ class Staff extends Component{
 
 	render(){
 		const background={
-			backgroundImage:`url(${flight})`,
+			backgroundImage:`url(${pour})`,
 			backgroundSize:'cover',
 			height:'90vh'
 		}
 		
 		let content=!this.state.user ? <LoginControl onLogin={this.handleLogin} userData={userArray} /> :
 			<div>
-				<h1>Logged in as: {this.state.user.username}</h1>
+				<h1>Logged in as: {this.state.user.username}</h1> 
+				<button className='orange-btn' onClick={this.handleLogout}>Logout</button>
 				{
 					this.state.user.role==='management' ? 
 						<Management /> :
@@ -100,7 +101,6 @@ class Staff extends Component{
 							onAddNewKeg={this.props.onAddNewKeg}
 							 />
 				}
-				<button className='orange-btn' onClick={this.handleLogout}>Logout</button>
 			</div>
 
 		return(

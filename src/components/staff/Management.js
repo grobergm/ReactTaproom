@@ -4,7 +4,8 @@ function Management(props){
 
 	return(
 		<div>
-			Management Component
+			<h1>Management</h1>
+			<p>This component will display stats on closed tabs, shifts and inventory</p>
 		</div>
 		)
 
