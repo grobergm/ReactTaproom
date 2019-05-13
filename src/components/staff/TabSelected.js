@@ -9,7 +9,7 @@ function TabSelected(props){
 				props.tab.order.map((drink,index)=>{
 					return <p
 									className={drink.poured ? 'poured' : 'not-poured'} 
-									onClick={()=>props.onTabPourDrink(drink.id,index)} 
+									onClick={props.onTabPourDrink(drink.id,index)} 
 									key={index}>{drink.name}</p>
 				})
 			}

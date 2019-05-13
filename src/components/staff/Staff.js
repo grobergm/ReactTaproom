@@ -38,7 +38,6 @@ class Staff extends Component{
   }
 
   handleTabPourDrink(drinkID,drinkIndex){
-  	console.log(drinkIndex)
     let newTabs=this.state.tabs.slice();
     let selectedTabIndex=this.state.tabs.findIndex(tab=>{return tab.id===this.state.tabSelected.id});
     if(newTabs[selectedTabIndex].order[drinkIndex].poured===false){
