@@ -18,6 +18,7 @@ class App extends Component{
     this.state={
       kegs:[],
       tabs:[],
+      closedTabs:[],
       user:null
     }
     this.handleCheckTab=this.handleCheckTab.bind(this);
@@ -40,17 +41,17 @@ class App extends Component{
     }
   }
 
-  handleAddDrinkToTab(tabSelected,drink){
+  handleAddDrinkToTab(tabNumber,drink){
     let newTabs=this.state.tabs.slice();
-    let selectedTabIndex=this.state.tabs.findIndex(tab=>{return tab.table===tabSelected});
+    let selectedTabIndex=this.state.tabs.findIndex(tab=>{return tab.table===tabNumber});
     newTabs[selectedTabIndex].order.push(drink);
     console.log(newTabs);
   }
 
-  handlePourDrink(drinkName,drinkIndex,tabSelected,bartender){
+  handlePourDrink(drinkName,drinkIndex,tabNumber,bartender){
     if(bartender){
       let newTabs=this.state.tabs.slice();
-      let selectedTabIndex=this.state.tabs.findIndex(tab=>{return tab.table===tabSelected});
+      let selectedTabIndex=this.state.tabs.findIndex(tab=>{return tab.table===tabNumber});
       if(newTabs[selectedTabIndex].order[drinkIndex].poured===false){
         newTabs[selectedTabIndex].order[drinkIndex].poured=true;
         this.setState({tabs:newTabs})
@@ -60,6 +61,17 @@ class App extends Component{
         this.setState({kegs:newKegs});
       }
     }
+  }
+
+  handleCloseTab(tabNumber,tip){
+    let newTabs=this.state.tabs.slice();
+    let total=0;
+    let selectedTabIndex=this.state.tabs.findIndex(tab=>{return tab.table===tabNumber});
+    newTabs[selectedTabIndex].order.forEach(drink=>{
+      total+=drink.price
+    });
+    total+tip;
+    newTabs[selectedTabIndex]
   }
 
   handleLogin(userLogin){
