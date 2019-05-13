@@ -14,20 +14,17 @@ class Staff extends Component{
 		  user:null
 		}
 		this.handleChangeTab=this.handleChangeTab.bind(this);
-    this.handleCheckTab=this.handleCheckTab.bind(this);
+    this.handleAddTab=this.handleAddTab.bind(this);
     this.handleAddDrinkToTab=this.handleAddDrinkToTab.bind(this);
     this.handleLogin=this.handleLogin.bind(this);
     this.handleLogout=this.handleLogout.bind(this);
     this.handlePourDrink=this.handlePourDrink.bind(this);
 	}
 
-	handleCheckTab(tabEntered){
-    let openTab=this.state.tabs.find(tab=>{return tab.table===tabEntered.table});
-    if(!openTab){
-      const newTabs=this.state.tabs.slice();
-      newTabs.push(tabEntered);
-      this.setState({tabs:newTabs});
-    }
+	handleAddTab(tabEntered){
+    const newTabs=this.state.tabs.slice();
+    newTabs.push(tabEntered);
+    this.setState({tabs:newTabs});
   }
 
   handleAddDrinkToTab(tabNumber,drink){
@@ -52,6 +49,9 @@ class Staff extends Component{
     }
   }
 
+  handleSelectTab(tab){
+  	this.setState({tabSelected:tab});
+  }
 
   handleCloseTab(tabNumber,tip){
     let newTabs=this.state.tabs.slice();
@@ -100,11 +100,12 @@ class Staff extends Component{
 					this.state.user.role==='management' ? 
 						<Management /> :
 						<Server 
-							onCheckTab={this.handleCheckTab} 
+							onAddTab={this.handleAddTab} 
 							tabs={this.state.tabs} 
 							kegs={this.props.kegs} 
 							onPourDrink={this.handlePourDrink} 
-							onAddDrinkToTab={this.handleAddDrinkToTab} />
+							onAddDrinkToTab={this.handleAddDrinkToTab}
+							onSelectTab={this.handleSelectTab} />
 				}
 				<button className='orange-btn' onClick={this.onLogout}>Logout</button>
 			</div>

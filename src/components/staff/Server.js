@@ -9,10 +9,10 @@ import NewTabControl from './NewTabControl';
 function Server(props){
 	return(
 		<div>
-			<h1 style={{color:'black'}}>Server</h1>
+			<h1>Server</h1>
 			<AddKeg />
-			<NewTabControl onCheckTab={props.onCheckTab} />
-			<TabList kegs={props.kegs} tabList={props.tabs} onAddDrinkToTab={props.onAddDrinkToTab} onPourDrink={props.onPourDrink}/>
+			<NewTabControl onAddTab={props.onAddTab} />
+			<TabList onSelectTab={props.onSelectTab} tabList={props.tabs} onAddDrinkToTab={props.onAddDrinkToTab} onPourDrink={props.onPourDrink}/>
 			<KegList kegs={props.kegs} admin={true} />
 		</div>
 		)

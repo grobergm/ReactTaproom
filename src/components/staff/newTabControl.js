@@ -1,4 +1,5 @@
 import React from 'react';
+import { v4 } from 'uuid';
 
 function NewTabControl(props){
 	let _table=null;
@@ -6,7 +7,7 @@ function NewTabControl(props){
 
 	function handleTab(event){
 		event.preventDefault();
-		props.onCheckTab({tabName:_tabName.value,table:_table.value,order:[]});
+		props.onAddTab({id:v4(),tabName:_tabName.value,table:_table.value,order:[]});
 		_table.value='';
 		_tabName.value='';
 
