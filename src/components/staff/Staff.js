@@ -13,7 +13,7 @@ class Staff extends Component{
 			tabSelected:null,
 		  user:null
 		}
-		this.handleChangeTab=this.handleChangeTab.bind(this);
+		this.handleSelectTab=this.handleSelectTab.bind(this);
     this.handleAddTab=this.handleAddTab.bind(this);
     this.handleAddDrinkToTab=this.handleAddDrinkToTab.bind(this);
     this.handleLogin=this.handleLogin.bind(this);
@@ -76,16 +76,6 @@ class Staff extends Component{
     this.setState({user:null})
   }
 
-
-	handleChangeTab(event){
-		this.setState({tabSelected:event.target.value});
-		this.handleShowTab(event.target.value);
-	}
-
-	handleShowTab(number){
-		let currentTab=this.props.tabs.find(tab=>{return tab.table===number});
-		this.setState({tab:currentTab})
-	}
 	render(){
 		const background={
 			backgroundImage:`url(${flight})`,
@@ -102,6 +92,7 @@ class Staff extends Component{
 						<Server 
 							onAddTab={this.handleAddTab} 
 							tabs={this.state.tabs} 
+							tabSelected={this.state.tabSelected}
 							kegs={this.props.kegs} 
 							onPourDrink={this.handlePourDrink} 
 							onAddDrinkToTab={this.handleAddDrinkToTab}
