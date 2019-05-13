@@ -12,7 +12,6 @@ function Server(props){
 	return(
 		<div>
 			<h1>Server</h1>
-			<AddKeg />
 			<KegList 
 				kegs={props.kegs} 
 				admin={true} 
@@ -21,11 +20,13 @@ function Server(props){
 				onDeleteKeg={props.onDeleteKeg} />
 			<NewTabControl onAddTab={props.onAddTab} />
 			<TabList onSelectTab={props.onSelectTab} tabList={props.tabs} onTabPourDrink={props.onTabPourDrink}   />
-			
+
 			{
 				props.tabSelected ? <TabSelected tab={props.tabSelected} onTabPourDrink={props.onTabPourDrink} /> :	null
 			}
-
+							
+			<AddKeg onAddNewKeg={props.onAddNewKeg} />
+			
 		</div>
 		)
 }

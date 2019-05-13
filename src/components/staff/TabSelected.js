@@ -9,7 +9,7 @@ function TabSelected(props){
 		return total;
 	}
 	return (
-		<div class='dark-background'>
+		<div style={{margin:'0 25%'}} class='dark-background'>
 		<h1>Selected Tab</h1>
 			<h2>{props.tab.tabName} Table:{props.tab.table}</h2>
 			{

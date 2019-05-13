@@ -19,6 +19,7 @@ class App extends Component{
     }
     this.handlePourDrink=this.handlePourDrink.bind(this);
     this.handleDeleteKeg=this.handleDeleteKeg.bind(this);
+    this.handleAddNewKeg=this.handleAddNewKeg.bind(this);
   }
  
   componentDidMount(){
@@ -39,6 +40,12 @@ class App extends Component{
     this.setState({kegs:newKegs});
   }
 
+  handleAddNewKeg(keg){
+    let newKegs=this.state.kegs.slice();
+    newKegs.push(keg);
+    this.setState({kegs:newKegs})
+  }
+
   render(){
     return (
      <Router>
@@ -46,7 +53,14 @@ class App extends Component{
         <Navbar />
         <Switch>
           <Route exact path='/' component={Landing} />
-          <Route path='/staff' render={()=><Staff kegs={this.state.kegs} onPourDrink={this.handlePourDrink} onDeleteKeg={this.handleDeleteKeg}/>} />
+          <Route 
+            path='/staff' 
+            render={()=><Staff 
+              kegs={this.state.kegs} 
+              onPourDrink={this.handlePourDrink} 
+              onDeleteKeg={this.handleDeleteKeg} 
+              onAddNewKeg={this.handleAddNewKeg} />
+            } />
           <Route path='/taproom' render={()=><Taproom kegs={this.state.kegs}/>} />
           <Route component={NotFound} />
         </Switch>
