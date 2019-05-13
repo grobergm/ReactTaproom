@@ -13,7 +13,12 @@ function Server(props){
 		<div>
 			<h1>Server</h1>
 			<AddKeg />
-			<KegList kegs={props.kegs} admin={true} onPourDrink={props.onPourDrink} onAddDrinkToTab={props.onAddDrinkToTab}  />
+			<KegList 
+				kegs={props.kegs} 
+				admin={true} 
+				onPourDrink={props.onPourDrink} 
+				onAddDrinkToTab={props.onAddDrinkToTab}
+				onDeleteKeg={props.onDeleteKeg} />
 			<NewTabControl onAddTab={props.onAddTab} />
 			{
 				props.tabSelected ? <TabSelected tab={props.tabSelected} /> :	null

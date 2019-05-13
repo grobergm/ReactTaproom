@@ -92,7 +92,8 @@ class Staff extends Component{
 							onPourDrink={this.props.onPourDrink} 
 							onTabPourDrink={this.handleTabPourDrink} 
 							onAddDrinkToTab={this.handleAddDrinkToTab}
-							onSelectTab={this.handleSelectTab} />
+							onSelectTab={this.handleSelectTab}
+							onDeleteKeg={this.props.onDeleteKeg} />
 				}
 				<button className='orange-btn' onClick={this.onLogout}>Logout</button>
 			</div>

@@ -17,6 +17,7 @@ function KegList(props){
 				props.kegs.map((keg,index)=>{
 					return <Keg 
 									onPourDrink={props.onPourDrink}
+									onDeleteKeg={props.onDeleteKeg}
 									id={keg.id}
 									name={keg.name}
 									brewery={keg.brewery}

@@ -1,9 +1,9 @@
 import React from 'react';
 
-function DeleteKeg(){
+function DeleteKeg(props){
 
 	return(
-		<div className='red-btn'>
+		<div onClick={props.onDeleteKeg} className='red-btn'>
 			Remove
 		</div>
 		)

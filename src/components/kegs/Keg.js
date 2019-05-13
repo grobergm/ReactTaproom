@@ -19,7 +19,6 @@ function Keg(props){
 				props.admin ? 
 				<div style={{display:'flex', justifyContent:'space-around'}}>
 					<EditKeg id={props.id} />
-					<DeleteKeg id={props.id} />
 				</div> 
 				: null
 			}
@@ -28,7 +27,8 @@ function Keg(props){
 			<p>{props.type}</p>
 			<p>${props.price} ABV:{props.abv}</p>
 			<KegFill pints={props.pints} />
-			{props.admin ? <PourDrink onPourDrink={()=>props.onPourDrink(props.id)} /> : null}
+			{props.admin ? <PourDrink id={props.id} onPourDrink={()=>props.onPourDrink(props.id)} />: null}
+			{props.pints > 100 ? <DeleteKeg onDeleteKeg={()=>props.onDeleteKeg(props.id)} /> : null}
 		</div>
 		)
 }
