@@ -27,7 +27,7 @@ function Keg(props){
 			<p>{props.type}</p>
 			<p>${props.price} ABV:{props.abv}</p>
 			<KegFill pints={props.pints} />
-			{props.admin ? <PourDrink id={props.id} onPourDrink={props.onPourDrink}/>: null}
+			{props.admin ? <PourDrink id={props.id} />: null}
 			{props.admin&&props.pints > 100 ? <DeleteKeg onDeleteKeg={props.onDeleteKeg}/> : null}
 		</div>
 		)
