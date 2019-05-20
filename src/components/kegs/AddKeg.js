@@ -1,8 +1,9 @@
 import React from 'react';
 import {v4} from "uuid";
 
-function AddKeg(props){
+import { connect } from 'react-redux';
 
+function AddKeg(props){
 	let _name=null;
 	let _brewery=null;
 	let _type=null;
@@ -11,7 +12,20 @@ function AddKeg(props){
 
 	function handleAddKegSubmission(event){
 		event.preventDefault();
-		props.onAddNewKeg({id:v4(),name:_name.value, brewery:_brewery.value,type:_type.value,abv:_abv.value,price:parseInt(_price.value),pints:0})
+		const { dispatch }= props;
+		const action={
+			type:'ADD_KEG',
+			keg:{
+				id:v4(),
+				name:_name.value,
+				brewery:_brewery.value,
+				type:_type.value,
+				abv:_abv.value,
+				price:parseInt(_price.value),
+				pints:0
+			}
+		}
+		dispatch(action);
 		_name.value='';
 		_brewery.value='';
 		_type.value='';
@@ -58,4 +72,4 @@ function AddKeg(props){
 		)
 };
 
-export default AddKeg;
+export default connect()(AddKeg);

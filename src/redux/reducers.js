@@ -16,7 +16,7 @@ const kegReducer=(state,action)=>{
 }
 
 
-const kegListReducer=(state,action)=>{
+const kegListReducer=(state=[],action)=>{
 	switch(action.type){
 		case 'POUR_DRINK':
 			return state.map(k=>kegReducer(k,action))

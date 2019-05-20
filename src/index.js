@@ -10,12 +10,12 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 const store= createStore(kegListReducer);
-console.log(store.getState())
+store.subscribe(()=>console.log('store_updated',store.getState()));
 
 
 ReactDOM.render(
 	<Provider store={store}>
-		<App store={store} />
+		<App />
 	</Provider>, 
 	document.getElementById('root'));
 
