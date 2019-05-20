@@ -4,7 +4,7 @@ import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import kegListReducer from './redux/reducers';
+import kegListReducer from './redux/kegReducers';
 import { createStore } from 'redux';
 
 import { Provider } from 'react-redux';

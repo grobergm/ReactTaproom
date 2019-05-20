@@ -1,4 +1,4 @@
-import kegListReducer from './reducers';
+import kegListReducer from './kegReducers';
 import kegArray from '../models/kegData';
 
 describe('kegListReducer',()=>{
