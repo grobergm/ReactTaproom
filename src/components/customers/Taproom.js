@@ -2,6 +2,8 @@ import React from 'react';
 import flight from '../../img/flight.jpg';
 import KegList from '../kegs/KegList';
 
+
+
 function Taproom(props){
 	const background={
 	backgroundImage:`url(${flight})`,

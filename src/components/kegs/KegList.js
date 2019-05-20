@@ -1,8 +1,9 @@
 import React from 'react';
 import Keg from './Keg';
+import { connect } from 'react-redux';
 
 function KegList(props){
-	
+	console.log(props);
 	const grid={
 		display:'grid',
 		gridTemplateColumns:'repeat(auto-fill,minmax(150px,1fr))',

@@ -12,8 +12,8 @@ import kegArray from './models/kegData';
 
 
 class App extends Component{
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state={
       kegs:[],
     }
@@ -47,6 +47,7 @@ class App extends Component{
   }
 
   render(){
+    console.log(this.props)
     return (
      <Router>
       <div>
