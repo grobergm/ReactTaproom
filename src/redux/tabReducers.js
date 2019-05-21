@@ -1,3 +1,8 @@
+const initialState={
+	selected:null,
+	tabList:[]
+}
+
 const tab=(state,action)=>{
 	switch(action.type){
 		case 'ADD_TO_ORDER':
@@ -8,18 +13,22 @@ const tab=(state,action)=>{
 					...state,
 					order: state.order.concat(action.drink)
 				}
+		case 'SELECT_TAB':
+			return Object.assign({},state,{selected:action.tab});
 		default:
 			return state
 	}
 }
 
 
-const tabList=(state=[],action)=>{
+const tabList=(state=initialState,action)=>{
 	switch(action.type){
 		case 'ADD_TAB':
-			return state.concat(action.tab)
+			return state.tabList.concat(action.tab)
 		case 'ADD_TO_ORDER':
-			return state.map(t=>tab(t,action))
+			return state.tabList.map(t=>tab(t,action))
+		case 'SELECT_TAB':
+			return tab(state,action);
 		default:
 			return state;
 	}

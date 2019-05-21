@@ -1,10 +1,10 @@
 import tabListReducer from './tabReducers';
 
 describe('tabReducer',()=>{
-	const initialState=[
-		{id:'aoijijasdoijo',order:[]},
-		{id:'aasdsadsdsdasijo',order:[]}
-	];
+	const initialState={
+		selected:null,
+		tabList:[{id:'aoijijasdoijo',order:[]},{id:'aasdsadsdsdasijo',order:[]}]
+};
 
 	test('it returns initial state if unknown action',()=>{
 		expect(tabListReducer(initialState,{type:null})).toEqual(initialState)
@@ -20,6 +20,21 @@ describe('tabReducer',()=>{
 			{id:'aasdsadsdsdasijo',order:[]},
 			{id:'lasdlklaskd',order:[]}
 		]
+		expect(tabListReducer(initialState,action)).toEqual(nextState);
+	})
+
+	test('select tab',()=>{
+		const action={
+			type:'SELECT_TAB',
+			tab: {id:'lasdlklaskd',order:[]}
+		}
+		const nextState={
+			selected: {id:'lasdlklaskd',order:[]},
+			tabList:[
+				{id:'aoijijasdoijo',order:[]},
+				{id:'aasdsadsdsdasijo',order:[]}
+			]
+		}
 		expect(tabListReducer(initialState,action)).toEqual(nextState);
 	})
 
