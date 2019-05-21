@@ -31,7 +31,8 @@ function App(props){
 
 const mapStateToProps=state=>{
   return {
-    masterKegList:state
+    masterKegList:state.kegList,
+    masterTabList:state.tabList
   }
 }
 

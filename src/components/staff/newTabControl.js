@@ -1,13 +1,23 @@
 import React from 'react';
 import { v4 } from 'uuid';
+import { connect } from 'react-redux';
 
-function NewTabControl(props){
+function NewTabControl({dispatch}){
 	let _table=null;
 	let _tabName=null;
 
 	function handleTab(event){
 		event.preventDefault();
-		props.onAddTab({id:v4(),tabName:_tabName.value,table:_table.value,order:[]});
+		const action={
+			type:'ADD_TAB',
+			tab:{
+				id:v4(),
+				tabName:_tabName.value,
+				table:_table.value,
+				order:[]
+			}
+		}
+		dispatch(action);
 		_table.value='';
 		_tabName.value='';
 
@@ -34,4 +44,4 @@ function NewTabControl(props){
 	)
 }
 
-export default NewTabControl;
+export default connect()(NewTabControl);
