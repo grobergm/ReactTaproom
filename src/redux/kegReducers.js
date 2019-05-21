@@ -1,6 +1,6 @@
 import kegArray from '../models/kegData';
 
-const kegReducer=(state,action)=>{
+const keg=(state,action)=>{
 	switch(action.type){
 		case 'POUR_DRINK':
 			if(state.id!==action.id){
@@ -16,10 +16,10 @@ const kegReducer=(state,action)=>{
 }
 
 
-const kegListReducer=(state=kegArray,action)=>{
+const kegList=(state=kegArray,action)=>{
 	switch(action.type){
 		case 'POUR_DRINK':
-			return state.map(k=>kegReducer(k,action))
+			return state.map(k=>keg(k,action))
 		case 'ADD_KEG':
 			return state.concat(action.keg);
 		case 'DELETE_KEG':
@@ -30,4 +30,4 @@ const kegListReducer=(state=kegArray,action)=>{
 	}
 }
 
-export default kegListReducer;
+export default kegList;

@@ -4,12 +4,13 @@ import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import kegListReducer from './redux/kegReducers';
+import rootReducer from './redux/rootReducer';
 import { createStore } from 'redux';
 
 import { Provider } from 'react-redux';
 
-const store= createStore(kegListReducer);
+const store= createStore(rootReducer);
+console.log(store.getState());
 store.subscribe(()=>console.log('store_updated',store.getState()));
 
 

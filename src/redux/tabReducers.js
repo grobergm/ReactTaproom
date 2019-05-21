@@ -1,4 +1,4 @@
-const tabReducer=(state,action)=>{
+const tab=(state,action)=>{
 	switch(action.type){
 		case 'ADD_TO_ORDER':
 			if(state.id!==action.id){
@@ -14,15 +14,15 @@ const tabReducer=(state,action)=>{
 }
 
 
-const tabListReducer=(state,action)=>{
+const tabList=(state=[],action)=>{
 	switch(action.type){
 		case 'ADD_TAB':
 			return state.concat(action.tab)
 		case 'ADD_TO_ORDER':
-			return state.map(t=>tabReducer(t,action))
+			return state.map(t=>tab(t,action))
 		default:
 			return state;
 	}
 }
 
-export default tabListReducer;
+export default tabList;
