@@ -13,43 +13,10 @@ class Staff extends Component{
 			tabSelected:null,
 		  user:null
 		}
-		this.handleSelectTab=this.handleSelectTab.bind(this);
-    this.handleAddTab=this.handleAddTab.bind(this);
-    this.handleAddDrinkToTab=this.handleAddDrinkToTab.bind(this);
     this.handleLogin=this.handleLogin.bind(this);
     this.handleLogout=this.handleLogout.bind(this);
-    this.handleTabPourDrink=this.handleTabPourDrink.bind(this);
 	}
 
-	handleAddTab(tabEntered){
-    const newTabs=this.state.tabs.slice();
-    newTabs.push(tabEntered);
-    this.setState({tabs:newTabs});
-  }
-
-  handleAddDrinkToTab(drink){
-  	if(this.state.tabSelected){
-  		let newTabs=this.state.tabs.slice();
-		  let selectedTabIndex=this.state.tabs.findIndex(tab=>{return tab.id===this.state.tabSelected.id});
-		  drink.poured=false;
-		  newTabs[selectedTabIndex].order.push(drink);
-		  this.handleSelectTab(newTabs[selectedTabIndex]);
-  	}
-  }
-
-  handleTabPourDrink(drinkID,drinkIndex){
-    let newTabs=this.state.tabs.slice();
-    let selectedTabIndex=this.state.tabs.findIndex(tab=>{return tab.id===this.state.tabSelected.id});
-    if(newTabs[selectedTabIndex].order[drinkIndex].poured===false){
-      newTabs[selectedTabIndex].order[drinkIndex].poured=true;
-      this.setState({tabs:newTabs})
-      this.props.onPourDrink(drinkID);
-    }
-  }
-
-  handleSelectTab(tab){
-  	this.setState({tabSelected:tab});
-  }
 
   handleCloseTab(tabNumber,tip){
     let newTabs=this.state.tabs.slice();
@@ -88,18 +55,7 @@ class Staff extends Component{
 				{
 					this.state.user.role==='management' ? 
 						<Management /> :
-						<Server 
-							onAddTab={this.handleAddTab} 
-							tabs={this.state.tabs} 
-							tabSelected={this.state.tabSelected}
-							kegs={this.props.kegs} 
-							onPourDrink={this.props.onPourDrink} 
-							onTabPourDrink={this.handleTabPourDrink} 
-							onAddDrinkToTab={this.handleAddDrinkToTab}
-							onSelectTab={this.handleSelectTab}
-							onDeleteKeg={this.props.onDeleteKeg}
-							onAddNewKeg={this.props.onAddNewKeg}
-							 />
+						<Server kegs={this.props.kegs} />
 				}
 			</div>
 

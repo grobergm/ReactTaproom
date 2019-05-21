@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import kegList from './kegReducers';
-import tabList from './tabReducers';
+import tabState from './tabReducers';
 
 const rootReducer=combineReducers({
 	kegList,
-	tabList
+	tabState
 })
 
 export default rootReducer;

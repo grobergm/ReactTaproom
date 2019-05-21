@@ -1,9 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-function TabSelected(props){
+
+function TabSelected({tab, dispatch}){
+
 	function calculateCost(){
 		let total=0;
-		props.tab.order.forEach(drink=>{
+		tab.order.forEach(drink=>{
 			total+=drink.price
 		});
 		return total;
@@ -11,12 +14,13 @@ function TabSelected(props){
 	return (
 		<div style={{margin:'0 25%'}} class='dark-background'>
 		<h1>Selected Tab</h1>
-			<h2>{props.tab.tabName} Table:{props.tab.table}</h2>
+			<h2>{tab.tabName} Table:{tab.table}</h2>
 			{
-				props.tab.order.map((drink,index)=>{
+				tab.order.map((drink,index)=>{
 					return <p
 									className={drink.poured ? 'poured' : 'not-poured'} 
-									onClick={props.onTabPourDrink(drink.id,index)} 
+									// need to make new reducer for this
+									onClick={onTabPourDrink(drink.id,index)} 
 									key={index}>{drink.name} {drink.price}</p>
 				})
 			}
@@ -25,4 +29,4 @@ function TabSelected(props){
 		)
 }
 
-export default TabSelected;
+export default connect()(TabSelected);
