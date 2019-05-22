@@ -13,7 +13,7 @@ function Taproom(props){
 	return(
 		<div style={background} >
 			<h1>Current Selection</h1>
-			<KegList kegs={props.kegs} admin={false} />
+			<KegList admin={false} />
 		</div>
 	)
 };

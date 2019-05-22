@@ -10,13 +10,10 @@ import { connect } from 'react-redux';
 
 
 function Server(props){
-	console.log(props);
 	return(
 		<div>
 			<h1>Server</h1>
-			<KegList 
-				kegs={props.kegs} 
-				admin={true} />
+			<KegList admin={true} />
 			<NewTabControl />
 			<TabList tabList={props.tabList}/>
 
@@ -31,7 +28,6 @@ function Server(props){
 }
 
 const mapStateToProps=(state)=>{
-	console.log(state)
 	return{
 		tabSelected:state.tabState.selected,
 		tabList:state.tabState.tabList

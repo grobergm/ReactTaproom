@@ -18,11 +18,8 @@ function App(props){
       <Navbar />
       <Switch>
         <Route exact path='/' component={Landing} />
-        <Route 
-          path='/staff' 
-          render={()=><Server kegs={props.masterKegList} />
-          } />
-        <Route path='/taproom' render={()=><Taproom kegs={props.masterKegList} />} />
+        <Route path='/staff' component={Server} />
+        <Route path='/taproom' component={Taproom} />
         <Route component={NotFound} />
       </Switch>
     </div>

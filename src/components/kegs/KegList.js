@@ -3,7 +3,7 @@ import Keg from './Keg';
 import { connect } from 'react-redux';
 
 function KegList(props){
-	console.log(props);
+	console.log(props)
 	const grid={
 		display:'grid',
 		gridTemplateColumns:'repeat(auto-fill,minmax(150px,1fr))',
@@ -15,9 +15,8 @@ function KegList(props){
 	return(
 		<div style={grid}>	
 			{
-				props.kegs.map((keg,index)=>{
+				props.kegList.map((keg,index)=>{
 					return <Keg 
-									onAddDrinkToTab={()=>props.onAddDrinkToTab(keg)}
 									id={keg.id}
 									name={keg.name}
 									brewery={keg.brewery}
@@ -33,4 +32,10 @@ function KegList(props){
 		)
 }
 
-export default KegList;
+const mapStateToProps=state=>{
+	return {
+		kegList:state.kegList,
+	}
+}
+		
+export default connect(mapStateToProps)(KegList);
