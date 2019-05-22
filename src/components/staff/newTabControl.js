@@ -20,7 +20,6 @@ function NewTabControl({dispatch}){
 		dispatch(action);
 		_table.value='';
 		_tabName.value='';
-
 	}
 	return(
 		<div>

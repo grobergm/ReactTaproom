@@ -3,6 +3,8 @@ const initialState={
 	tabList:[]
 }
 
+// MOCK DATA SHOULD ALL COME FROM ONE SOURCE FOR REDUCER TESTS
+
 const tab=(state,action)=>{
 	switch(action.type){
 		case 'ADD_TO_ORDER':
@@ -14,7 +16,16 @@ const tab=(state,action)=>{
 					order: state.order.concat(action.drink)
 				}
 		case 'SELECT_TAB':
-			return Object.assign({},state,{selected:action.tab});
+			return Object.assign({},state,{selected:action.id});
+		// case 'TOGGLE_POUR':
+		// 	if (state.id!==action.tabId){
+		// 		return state
+		// 	}
+		// 	const pourDrinkIndex=state.orders.findIndex(drink=>{return drink.id===action.id});
+		// 	const newOrders=state.selected.orders.slice()
+		// 	newOrders[pourDrinkIndex].poured=!newOrders[pourDrinkIndex].poured;
+		// 	const newTab=Object.assign({},state.selected,{orders:newOrders})
+		// 	return Object.assign({},state,{selected:newTab})
 		default:
 			return state
 	}
@@ -24,11 +35,17 @@ const tab=(state,action)=>{
 const tabList=(state=initialState,action)=>{
 	switch(action.type){
 		case 'ADD_TAB':
-			return state.tabList.concat(action.tab)
+			return {
+			selected:state.selected,
+			tabList:state.tabList.concat(action.tab)
+			}
+			
 		case 'ADD_TO_ORDER':
 			return state.tabList.map(t=>tab(t,action))
 		case 'SELECT_TAB':
 			return tab(state,action);
+		// case 'TOGGLE_POUR':
+		// 	return state.tabList.map(t=>tab(t.action))
 		default:
 			return state;
 	}

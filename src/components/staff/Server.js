@@ -21,7 +21,7 @@ function Server(props){
 			<TabList tabList={props.tabList}/>
 
 			{
-				props.tabSelected ? <TabSelected tab={props.tabSelected} /> :	null
+				props.tabSelected ? <TabSelected tabId={props.tabSelected} tabList={props.tabList} /> :	null
 			}
 							
 			<AddKeg />
