@@ -41,7 +41,10 @@ const tabList=(state=initialState,action)=>{
 			}
 			
 		case 'ADD_TO_ORDER':
-			return state.tabList.map(t=>tab(t,action))
+			return {
+			selected:state.selected,
+			tabList:state.tabList.map(t=>tab(t,action))
+			}
 		case 'SELECT_TAB':
 			return tab(state,action);
 		// case 'TOGGLE_POUR':

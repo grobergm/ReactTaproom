@@ -47,10 +47,13 @@ describe('tabReducer',()=>{
 			id:'aasdsadsdsdasijo',
 			drink:{id:'oioiwejoijioje',name:'sleigher',price:4,poured:false}
 		}
-		const nextState=[
-			{id:'aoijijasdoijo',order:[{id:'ffddffjioje',name:'green flash',price:4,poured:false}]},
-			{id:'aasdsadsdsdasijo',order:[{id:'oioiwejoijioje',name:'sleigher',price:4,poured:false}]}
-		]
+		const nextState={
+			selected:null,
+			tabList:[
+					{id:'aoijijasdoijo',order:[{id:'ffddffjioje',name:'green flash',price:4,poured:false}]},
+					{id:'aasdsadsdsdasijo',order:[{id:'oioiwejoijioje',name:'sleigher',price:4,poured:false}]}
+				]
+			}
 		expect(tabListReducer(initialState,action)).toEqual(nextState);
 	});
 

@@ -16,16 +16,7 @@ function KegList(props){
 		<div style={grid}>	
 			{
 				props.kegList.map((keg,index)=>{
-					return <Keg 
-									id={keg.id}
-									name={keg.name}
-									brewery={keg.brewery}
-									type={keg.type}
-									price={keg.price}
-									abv={keg.abv}
-									admin={props.admin}
-									pints={keg.pints}
-									key={index} />
+					return <Keg keg={keg} admin={props.admin} key={index} />
 				})
 			}
 		</div>

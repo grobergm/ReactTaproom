@@ -1,12 +1,17 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-function AddToTab(props){
+function AddToTab({drink,dispatch,selected}){
 
 	return(
-		<div onClick={props.onAddDrinkToTab} className='orange-btn'>
+		<div onClick={()=>dispatch({type:'ADD_TO_ORDER',id:selected,drink:drink})} className='orange-btn'>
 			Add to Tab
 		</div>
 		)
 }
 
-export default AddToTab;
+const mapStateToProps=state=>{
+	return {selected:state.tabState.selected}
+}
+
+export default connect(mapStateToProps)(AddToTab);

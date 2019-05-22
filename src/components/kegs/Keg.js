@@ -5,7 +5,7 @@ import KegFill from './KegFill';
 import PourDrink from './PourDrink';
 
 
-function Keg(props){
+function Keg({keg , admin}){
 	const kegStyle={
 		textAlign:'center',
 		padding:'2vw',
@@ -16,19 +16,19 @@ function Keg(props){
 	return(
 		<div style={kegStyle}>
 			{
-				props.admin ? 
+				admin ? 
 				<div style={{display:'flex', justifyContent:'space-around'}}>
-					<AddToTab onAddDrinkToTab={props.onAddDrinkToTab} />
+					<AddToTab drink={keg}/>
 				</div> 
 				: null
 			}
-			<h2>{props.name}</h2>
-			<p>{props.brewery}</p>
-			<p>{props.type}</p>
-			<p>${props.price} ABV:{props.abv}</p>
-			<KegFill pints={props.pints} />
-			{props.admin ? <PourDrink id={props.id} />: null}
-			{props.admin&&props.pints > 100 ? <DeleteKeg id={props.id}/> : null}
+			<h2>{keg.name}</h2>
+			<p>{keg.brewery}</p>
+			<p>{keg.type}</p>
+			<p>${keg.price} ABV:{keg.abv}</p>
+			<KegFill pints={keg.pints} />
+			{keg.admin ? <PourDrink id={keg.id} />: null}
+			{keg.admin&&keg.pints > 100 ? <DeleteKeg id={keg.id}/> : null}
 		</div>
 		)
 }
