@@ -2,7 +2,6 @@ import React from 'react';
 
 function KegFill(props){
 	const keg={
-		border:'1px solid black',
 		height:'5vh',
 		overflow:'hidden',
 		borderRadius:'3px',

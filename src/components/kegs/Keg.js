@@ -15,20 +15,21 @@ function Keg({keg , admin}){
 
 	return(
 		<div style={kegStyle}>
-			{
-				admin ? 
-				<div style={{display:'flex', justifyContent:'space-around'}}>
-					<AddToTab drink={keg}/>
-				</div> 
-				: null
-			}
 			<h2>{keg.name}</h2>
 			<p>{keg.brewery}</p>
 			<p>{keg.type}</p>
 			<p>${keg.price} ABV:{keg.abv}</p>
 			<KegFill pints={keg.pints} />
-			{keg.admin ? <PourDrink id={keg.id} />: null}
-			{keg.admin&&keg.pints > 100 ? <DeleteKeg id={keg.id}/> : null}
+			{admin&&keg.pints > 100 ? <DeleteKeg id={keg.id}/> : null}
+			{
+				admin ? 
+				<div style={{display:'flex', justifyContent:'space-around'}}>
+					<AddToTab drink={keg}/>
+					<PourDrink id={keg.id} />
+				</div> 
+				: null
+			}
+			<p>Total Pints:{keg.pints}</p>
 		</div>
 		)
 }

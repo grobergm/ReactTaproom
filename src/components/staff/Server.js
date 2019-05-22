@@ -5,24 +5,39 @@ import AddKeg from '../kegs/AddKeg';
 import TabList from './TabList';
 import TabSelected from './TabSelected';
 import NewTabControl from './NewTabControl';
+import pour from '../../img/keglist.jpg';
 
 import { connect } from 'react-redux';
 
 
-function Server(props){
+function Server({tabList,tabSelected}){
+	const background={
+			backgroundImage:`url(${pour})`,
+			backgroundSize:'cover',
+			height:'90vh'
+		}
+	const grid={
+		display:'grid',
+		gridTemplateColumns:'20% 80%'
+	}
 	return(
-		<div>
-			<h1>Server</h1>
-			<KegList admin={true} />
-			<NewTabControl />
-			<TabList tabList={props.tabList}/>
-
+		<div style={background}>
 			{
-				props.tabSelected ? <TabSelected tabId={props.tabSelected} tabList={props.tabList} /> :	null
+				tabSelected ? 
+				<div style={grid}>
+					<TabSelected tabId={tabSelected} tabList={tabList} />
+					<KegList admin={true} />
+				</div>
+				: 
+				<div>
+					<NewTabControl />
+					{tabList.length? <TabList tabList={tabList}/>:null}
+					<div style={grid}>
+						<AddKeg />
+						<KegList admin={true} />
+					</div>
+				</div>
 			}
-							
-			<AddKeg />
-			
 		</div>
 		)
 }

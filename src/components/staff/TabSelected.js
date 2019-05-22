@@ -17,19 +17,16 @@ function TabSelected({tabId, tabList, dispatch}){
 
 	
 	return (
-		<div style={{margin:'0 25%'}} className='dark-background'>
-		<h1>Selected Tab</h1>
-			<h2>{tabData.tabName} Table:{tabData.table}</h2>
+		<div className='dark-background'>
+		<span className='red-btn' onClick={()=>{dispatch({type:'SELECT_TAB',id:null})}}>Close</span>
+		<h1>{tabData.tabName}</h1>
 			{
 				tabData.order.map((drink,index)=>{
-					return <p
-									className={drink.poured ? 'poured' : 'not-poured'} 
-									// need to make new reducer for this
-									// onClick={onTabPourDrink(drink.id,index)} 
-									key={index}>{drink.name} {drink.price}</p>
+					return <p key={index}>{drink.name} {drink.price}</p>
 				})
 			}
-			<p>Total:${calculateCost()}</p>
+			<hr/>
+			<h2>Total: ${calculateCost()}</h2>
 		</div>
 		)
 }
