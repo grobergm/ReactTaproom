@@ -1,6 +1,8 @@
 # ReactTaproom
 _A fictional taproom, created using React. This is a remake of a project we did using the Angular framework._ 
 
+<a href="https://react-tap.firebaseapp.com/">View Demo</a>
+
 ### Created by Matt Groberg
 
 ## Setup
